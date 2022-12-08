@@ -50,6 +50,8 @@ def lst_dictionary_words():
 
 def validate_guess(random_word):
     dictionary_words = lst_dictionary_words()
+    attempt_num = 1
+    print("Attempt number " + str(attempt_num) + ":" + "\n")
     prompt_user = input("Enter a 5 lettered word here - ")
     while True:
         size_prompt = len(prompt_user)
@@ -91,8 +93,9 @@ def letter_validation(random_word):
             if letter not in incorrect_letters:
                 incorrect_letters.append(letter)
         i += 1
-    return colours, letter_checked, incorrect_letters
+        display = " ".join(colours) + "\n" + " ".join(incorrect_letters) + "\n"
+    return display
 
 
-def gameplay(random_word, guesses):
+# def gameplay(random_word, guesses):
     
