@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-08T16:32:19.163Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="cRTLuZmasjyvU6c2Fxn4" version="20.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-08T16:43:10.434Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="-xueoInrQIYjzp7yduaw" version="20.6.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="942" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -21,7 +21,7 @@
         <mxCell id="sAMqTVVjXH1pAr0tEKRZ-2" value="Enter word" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="354" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-7" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if size_prompt &amp;lt; 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-7" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if len(word) &amp;lt; 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="371" y="310" width="86" height="80" as="geometry" />
         </mxCell>
         <mxCell id="sAMqTVVjXH1pAr0tEKRZ-23" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -60,10 +60,10 @@
         <mxCell id="sAMqTVVjXH1pAr0tEKRZ-47" value="False" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="457" y="190" width="50" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-49" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if size_prompt != 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-49" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if len(word)!= 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="371" y="180" width="86" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-50" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if size_prompt &amp;gt; 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="sAMqTVVjXH1pAr0tEKRZ-50" value="&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;if len(word) &amp;gt; 5&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="268" y="310" width="86" height="80" as="geometry" />
         </mxCell>
         <mxCell id="sAMqTVVjXH1pAr0tEKRZ-51" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
