@@ -1,7 +1,6 @@
-"""Provides the game's instructions"""
 
-
-def game_introductions():
+def game_intructions():
+    '''Provides the game's instructions'''
     print("You have 6 attempts to guess a 5 lettered word. Game completion occurs when:"
           "\n" + "- The guess matches the word."
           "\n" + "- All attempts have been exhausted.")
@@ -11,47 +10,37 @@ def game_introductions():
           "\n" + "1 - the letters are in both words and are in the same position."
           "\n" + "2 - the letters are in the other word but isn't in the same position."
           "\n" + "3 - the letters aren't in the other word.")
-    print("\n" + "The incorrect letters will be beneath the guess" + "\n")
-
- 
-"""Chooses a word at random"""
+    print("\n" + "The guesse's incorrect letters will be beneath the guess." + "\n")
 
 
-def pick_random_word():
+def random_word():
+    '''Chooses a word at random'''
     target_words = []
     import random
-    open_target_words_file = open('target_words.txt')
-    for line in open_target_words_file:
+    open_target_words = open('target_words.txt')
+    for line in open_target_words:
         target_words.append(line.strip())
-    open_target_words_file.close()
-    answer = random.choice(target_words)
-    return answer
+    open_target_words.close()
+    target_word = random.choice(target_words)
+    return target_word
 
 
-random_word = pick_random_word()
-print(random_word)
-guesses = []
+answer = random_word()
 
 
-"""lists all dictionary words"""
-
-
-def lst_dictionary_words():
-    dictionary_words = []
+def lst_dict_words():
+    '''lists dictionary words'''
+    dict_words = []
     open_all_words_file = open('all_words.txt')
     for line in open_all_words_file:
-        dictionary_words.append(line.strip())
+        dict_words.append(line.strip())
     open_all_words_file.close()
-    return dictionary_words
+    return dict_words
 
 
-"""Verifies that the guess is the correct length, its characters are letters and the guess exists"""
-
-
-def validate_guess(random_word):
-    dictionary_words = lst_dictionary_words()
-    attempt_num = 1
-    print("Attempt number " + str(attempt_num) + ":" + "\n")
+def validate_guess(answer):
+    '''Verifies that the guess is the correct length, its characters are letters and the guess is legible'''
+    dict_words = lst_dict_words()
     prompt_user = input("Enter a 5 lettered word here - ")
     while True:
         size_prompt = len(prompt_user)
@@ -61,41 +50,52 @@ def validate_guess(random_word):
             elif size_prompt < 5:
                 prompt_user = input("The word has less than 5 characters - Enter another word")
         elif size_prompt == 5:
-            if prompt_user in dictionary_words:
-                if prompt_user != random_word:
-                    guesses.append(prompt_user)
-                    return prompt_user
-                elif prompt_user == random_word:
-                    return "You guessed the word"
-            elif prompt_user not in dictionary_words:
+            if prompt_user in dict_words:
+                return prompt_user
+            elif prompt_user not in dict_words:
                 prompt_user = input("The word doesn't exist - Enter another word")
 
 
-"""Verifies the letters positions and return the incorrect letters"""
-
-
-def letter_validation(random_word):
-    validation = validate_guess(random_word)
+def gameplay(answer):
+    '''Verifies the guesse's letters positions, return the incorrect letters beneath the guess and the attempt number'''
+    i = 0
     colours = [0, 0, 0, 0, 0]
     letter_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
-    i = 0
-    for letter in validation:
-        if letter in random_word:
-            if letter == random_word[i]:
-                colours[i] = 1
-                letter_checked[i] = 1
-            elif letter != random_word[i]:
-                colours[i] = 2
-                letter_checked[i] = 1
-        elif letter not in random_word:
-            letter_checked[i] = 1
-            if letter not in incorrect_letters:
-                incorrect_letters.append(letter)
-        i += 1
-        display = " ".join(colours) + "\n" + " ".join(incorrect_letters) + "\n"
-    return display
+    num_attempts = 0
+    game_intructions()
+    while num_attempts <= 6:
+        print("Attempt number " + str(num_attempts) + ":" + "\n")
+        validation = validate_guess(answer)
+        print(validation)
+        if validation == answer:
+            print("Winner!")
+            break
+        for letter in validation:
+            if letter in answer:
+                if letter == answer[i]:
+                    colours[i] = "1"
+                    letter_checked[i] = "1"
+                elif letter != answer[i]:
+                    colours[i] = "2"
+                    letter_checked[i] = "1"
+            elif letter not in answer:
+                colours[i] = "0"
+                letter_checked[i] = "1"
+                if letter not in incorrect_letters:
+                    incorrect_letters.append(letter)
+            i += 1
+            if i == 5:
+                i = 0
+                num_attempts += 1
+                formatted_colours = " ".join(colours)
+                formatted_incorrect_letters = " ".join(incorrect_letters)
+                display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
+                print(display)
+    else:
+        print("No more available attempts")
 
+  
+gameplay(answer)
 
-# def gameplay(random_word, guesses):
-    
+random_word()
