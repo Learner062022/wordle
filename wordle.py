@@ -46,14 +46,14 @@ def validate_guess(answer):
         size_prompt = len(prompt_user)
         if size_prompt != 5:
             if size_prompt > 5:
-                prompt_user = input("The word has more than 5 characters - Enter another word")
+                prompt_user = input("The word has more than 5 characters - Enter another word ")
             elif size_prompt < 5:
-                prompt_user = input("The word has less than 5 characters - Enter another word")
+                prompt_user = input("The word has less than 5 characters - Enter another word ")
         elif size_prompt == 5:
             if prompt_user in dict_words:
                 return prompt_user
             elif prompt_user not in dict_words:
-                prompt_user = input("The word doesn't exist - Enter another word")
+                prompt_user = input("The word doesn't exist - Enter another word ")
 
 
 def gameplay(answer):
