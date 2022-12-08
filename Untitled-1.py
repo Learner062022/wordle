@@ -13,7 +13,7 @@ def game_introductions():
           "\n" + "3 - the letters aren't in the other word.")
     print("\n" + "The incorrect letters will be beneath the guess" + "\n")
 
-
+ 
 """Chooses a word at random"""
 
 
