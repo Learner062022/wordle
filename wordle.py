@@ -90,7 +90,8 @@ def gameplay(answer):
                 num_attempts += 1
                 formatted_colours = " ".join(colours)
                 formatted_incorrect_letters = " ".join(incorrect_letters)
-                display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
+                ordered_formatted_incorrect_letters = formatted_incorrect_letters.sort()
+                display = "\n" + formatted_colours + "\n" + ordered_formatted_incorrect_letters + "\n"
                 print(display)
     else:
         print("No more available attempts")
