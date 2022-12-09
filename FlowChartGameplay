@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-09T10:29:39.851Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="Ug_z5FSGJjRb04uw6q0_" version="20.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-09T13:19:15.071Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="6-0QSU26L5axEUbBdEhp" version="20.6.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1769" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -70,12 +70,6 @@
         <mxCell id="hcETGV09xxaVS8FfqAZk-14" value="Print &quot;Winner!&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="450" y="470" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hcETGV09xxaVS8FfqAZk-98" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hcETGV09xxaVS8FfqAZk-16" target="hcETGV09xxaVS8FfqAZk-22">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="hcETGV09xxaVS8FfqAZk-16" value="Print game&#39;s instructions" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="370" y="180" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="hcETGV09xxaVS8FfqAZk-167" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hcETGV09xxaVS8FfqAZk-21" target="hcETGV09xxaVS8FfqAZk-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -127,8 +121,10 @@
         <mxCell id="hcETGV09xxaVS8FfqAZk-62" value="Append letter to incorrect letters list" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-180" y="570" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hcETGV09xxaVS8FfqAZk-97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hcETGV09xxaVS8FfqAZk-63" target="hcETGV09xxaVS8FfqAZk-16">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="hcETGV09xxaVS8FfqAZk-97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hcETGV09xxaVS8FfqAZk-63" target="hcETGV09xxaVS8FfqAZk-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="180" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="hcETGV09xxaVS8FfqAZk-63" value="Set incorrect letters list" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="370" y="90" width="120" height="60" as="geometry" />
@@ -201,7 +197,7 @@
         <mxCell id="hcETGV09xxaVS8FfqAZk-187" value="Change element to 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-320" y="570" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hcETGV09xxaVS8FfqAZk-191" value="Print incorrect letters list beneath guess" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="hcETGV09xxaVS8FfqAZk-191" value="Print incorrect letters list" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="25" y="370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hcETGV09xxaVS8FfqAZk-192" value="Print user&#39;s guess" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
