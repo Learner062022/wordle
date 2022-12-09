@@ -58,13 +58,13 @@ def gameplay(answer):
         for letter in validation:
             if letter in answer:
                 if letter == answer[i]:
-                    colours[i] = "1"
+                    position_letter[i] = "1"
                     letter_checked[i] = "1"
                 elif letter != answer[i]:
-                    colours[i] = "2"
+                    position_letter[i] = "2"
                     letter_checked[i] = "1"
             elif letter not in answer:
-                colours[i] = "0"
+                position_letter[i] = "0"
                 letter_checked[i] = "1"
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
@@ -73,7 +73,7 @@ def gameplay(answer):
             if i == 5:
                 i = 0
                 num_attempts += 1
-                formatted_colours = " ".join(colours)
+                formatted_colours = " ".join(position_letter)
                 formatted_incorrect_letters = " ".join(incorrect_letters_ordered)
                 display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
                 print(display)
