@@ -42,7 +42,7 @@ def validate_guess(answer):
 
 
 def gameplay(answer):
-    '''Verifies the guesse's letters positions, return the incorrect letters beneath the guess and the attempt number'''
+    '''Verifies the guesse's letters positions, returns the incorrect letters and the attempt number'''
     i = 0
     position_letter = [0, 0, 0, 0, 0]
     letter_checked = [0, 0, 0, 0, 0]
