@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-09T01:21:29.755Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="sCNxIKoxziD5dyEJU_0z" version="20.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-09T10:27:17.275Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="2cCnzxrbkA2XRZmom4UX" version="20.6.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="942" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -33,6 +33,9 @@
         </mxCell>
         <mxCell id="0Kj5lxqSAwh4qet-w1BP-17" value="Choose a word from the list" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="150" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0Kj5lxqSAwh4qet-w1BP-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0Kj5lxqSAwh4qet-w1BP-18" target="0Kj5lxqSAwh4qet-w1BP-38">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0Kj5lxqSAwh4qet-w1BP-18" value="Iterate through text file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="150" y="580" width="120" height="60" as="geometry" />
@@ -76,17 +79,17 @@
         <mxCell id="0Kj5lxqSAwh4qet-w1BP-28" value="Append iteration to list" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="150" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="0Kj5lxqSAwh4qet-w1BP-30" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="209.5" y="640" as="sourcePoint" />
-            <mxPoint x="209.5" y="690" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="0Kj5lxqSAwh4qet-w1BP-36" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="209.5" y="200" as="sourcePoint" />
             <mxPoint x="209.5" y="250" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="0Kj5lxqSAwh4qet-w1BP-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0Kj5lxqSAwh4qet-w1BP-38" target="0Kj5lxqSAwh4qet-w1BP-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0Kj5lxqSAwh4qet-w1BP-38" value="Remove the iteration&#39;s newline character" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="690" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
