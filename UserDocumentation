@@ -1,0 +1,18 @@
+Objectives:
+Guess what the 5 lettered word that has been chosen at random is within 6 attempts.
+
+Rules:
+The words that are used as guesses must be in the Engish dictionary.
+
+Gameplay:
+Game completion occurs either when the word has been guessed or all attempts have been exhausted. The attempt's incrementation begins after the guess has been accepted.
+When the game commences a message saying "Enter a 5 lettered word here - " will appear, which is where you enter your attempt.
+The messages "The word has more than 5 characters - Enter another word" or "The word has less than 5 characters - Enter another word" will appear dependig on the guesse's length.
+The guess will be printed after it is accepted and its letters will be substituted with the numbers 1, 2, or 0 to indicate if they are in the other word and if their positions corresponds to the other word's letters.
+The numbers' meanings are discussed below:
+
+1 - the letters are in both words and are in the same position.
+2 - the letters are in the other word but isn't in the same position.
+3 - the letters aren't in the other word. 
+
+The letters that are not in the other word will be printed beneath the guess. The letters will be alphabetically ordered and wont't be substituted with an integer.
