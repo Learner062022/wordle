@@ -84,14 +84,14 @@ def gameplay(answer):
                 letter_checked[i] = "1"
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
+                    incorrect_letters_ordered = incorrect_letters.sort()
             i += 1
             if i == 5:
                 i = 0
                 num_attempts += 1
                 formatted_colours = " ".join(colours)
-                formatted_incorrect_letters = " ".join(incorrect_letters)
-                ordered_formatted_incorrect_letters = formatted_incorrect_letters.sort()
-                display = "\n" + formatted_colours + "\n" + ordered_formatted_incorrect_letters + "\n"
+                formatted_incorrect_letters = " ".join(incorrect_letters_ordered)
+                display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
                 print(display)
     else:
         print("No more available attempts")
