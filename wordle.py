@@ -1,18 +1,3 @@
-
-def game_intructions():
-    '''Provides the game's instructions'''
-    print("You have 6 attempts to guess a 5 lettered word. Game completion occurs when:"
-          "\n" + "- The guess matches the word."
-          "\n" + "- All attempts have been exhausted.")
-    print("\n" + "Words that are in the English Dictionary must be used.")
-    print("\n" + "Attempts' incrementation begins when the guess is legible, but doesn't match the word.")
-    print("\n" + "Guesses' letters will be 1, 2 or 0:"
-          "\n" + "1 - the letters are in both words and are in the same position."
-          "\n" + "2 - the letters are in the other word but isn't in the same position."
-          "\n" + "3 - the letters aren't in the other word.")
-    print("\n" + "The guesse's incorrect letters will be beneath the guess." + "\n")
-
-
 def random_word():
     '''Chooses a word at random'''
     target_words = []
@@ -63,7 +48,6 @@ def gameplay(answer):
     letter_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
     num_attempts = 0
-    game_intructions()
     while num_attempts <= 6:
         print("Attempt number " + str(num_attempts) + ":" + "\n")
         validation = validate_guess(answer)
