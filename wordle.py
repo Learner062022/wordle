@@ -1,31 +1,31 @@
-def random_word():
+def get_random_word():
     '''Chooses a word at random'''
-    target_words = []
+    lst_target_words = []
     import random
     open_target_words = open('target_words.txt')
-    for line in open_target_words:
-        target_words.append(line.strip())
+    for word in open_target_words:
+        lst_target_words.append(word.strip())
     open_target_words.close()
-    target_word = random.choice(target_words)
+    target_word = random.choice(open_target_words)
     return target_word
 
 
-answer = random_word()
+answer = get_random_word()
 
 
-def lst_dict_words():
+def get_dict_words():
     '''lists dictionary words'''
-    dict_words = []
+    lst_dict_words = []
     open_all_words_file = open('all_words.txt')
     for line in open_all_words_file:
-        dict_words.append(line.strip())
+        lst_dict_words.append(line.strip())
     open_all_words_file.close()
-    return dict_words
+    return lst_dict_words
 
 
 def validate_guess(answer):
     '''Verifies that the guess is the correct length, its characters are letters and the guess is legible'''
-    dict_words = lst_dict_words()
+    dict_words = get_dict_words()
     prompt_user = input("Enter a 5 lettered word here - ")
     while True:
         size_prompt = len(prompt_user)
@@ -58,13 +58,13 @@ def gameplay(answer):
         for letter in validation:
             if letter in answer:
                 if letter == answer[i]:
-                    colours[i] = "1"
+                    position_letter[i] = "1"
                     letter_checked[i] = "1"
                 elif letter != answer[i]:
-                    colours[i] = "2"
+                    position_letter[i] = "2"
                     letter_checked[i] = "1"
             elif letter not in answer:
-                colours[i] = "0"
+                position_letter[i] = "0"
                 letter_checked[i] = "1"
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
@@ -73,7 +73,7 @@ def gameplay(answer):
             if i == 5:
                 i = 0
                 num_attempts += 1
-                formatted_colours = " ".join(colours)
+                formatted_colours = " ".join(position_letter)
                 formatted_incorrect_letters = " ".join(incorrect_letters_ordered)
                 display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
                 print(display)
