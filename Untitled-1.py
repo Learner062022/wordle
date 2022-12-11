@@ -97,5 +97,3 @@ def gameplay(answer):
 
   
 gameplay(answer)
-
-random_word()
