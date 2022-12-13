@@ -6,7 +6,7 @@ def get_random_word():
     for word in open_target_words:
         lst_target_words.append(word.strip())
     open_target_words.close()
-    target_word = random.choice(open_target_words)
+    target_word = random.choice(lst_target_words)
     return target_word
 
 
@@ -47,8 +47,8 @@ def gameplay(answer):
     position_letter = [0, 0, 0, 0, 0]
     letter_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
-    num_attempts = 0
-    while num_attempts <= 6:
+    num_attempts = 1
+    while num_attempts <= 7:
         print("Attempt number " + str(num_attempts) + ":" + "\n")
         validation = validate_guess(answer)
         print(validation)
@@ -62,6 +62,7 @@ def gameplay(answer):
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
                     incorrect_letters.sort()
+                    " ".join(incorrect_letters)
             if letter in answer and letter == answer[i] and letter in incorrect_letters:
                 position_letter[i] = "1"
                 letter_checked[i] = "1"
