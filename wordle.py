@@ -11,6 +11,7 @@ def get_random_word():
 
 
 answer = get_random_word()
+print(answer)
 
 
 def get_dict_words():
@@ -47,34 +48,49 @@ def gameplay(answer):
     position_letter = [0, 0, 0, 0, 0]
     letter_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
-    num_attempts = 0
-    while num_attempts <= 6:
+    num_attempts = 1
+    while num_attempts <= 7:
         print("Attempt number " + str(num_attempts) + ":" + "\n")
         validation = validate_guess(answer)
         print(validation)
         if validation == answer:
-            print("Winner!")
+            print("\n" + "Winner!")
             break
         for letter in validation:
-            if letter in answer:
-                if letter == answer[i]:
-                    position_letter[i] = "1"
-                    letter_checked[i] = "1"
-                elif letter != answer[i]:
-                    position_letter[i] = "2"
-                    letter_checked[i] = "1"
-            elif letter not in answer:
+            if letter in answer and validation.count(letter) != answer.count(letter) or letter not in answer:
                 position_letter[i] = "0"
                 letter_checked[i] = "1"
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
-                    incorrect_letters_ordered = incorrect_letters.sort()
+                    incorrect_letters.sort()
+            if letter in answer and letter == answer[i] and letter in incorrect_letters:
+                position_letter[i] = "1"
+                letter_checked[i] = "1"
+            if letter in answer and validation.count(letter) > answer.count(letter) and letter in incorrect_letters:
+                position_letter[validation.find(letter)] = "2"
+                letter_checked[i] = "1"
+                rev_validation = validation[::-1]
+                rev_index = rev_validation.find(letter)
+                letter_checked[rev_index] = "0"
+            if letter in answer and validation.count(letter) == answer.count(letter) and letter != answer[i]:
+                position_letter[i] = "2"
+                letter_checked[i] = "1"
+            if letter in answer and validation.count(letter) == answer.count(letter) and letter == answer[i]:
+                position_letter[i] = "1"
+                letter_checked[i] = "1"
+            i += 1
+            if i == 5:
+                i = 0
+                num_attempts += 1
+                print(position_letter)
+                print(incorrect_letters)
+                print(letter_checked)
             i += 1
             if i == 5:
                 i = 0
                 num_attempts += 1
                 formatted_colours = " ".join(position_letter)
-                formatted_incorrect_letters = " ".join(incorrect_letters_ordered)
+                formatted_incorrect_letters = " ".join(incorrect_letters)
                 display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
                 print(display)
     else:
