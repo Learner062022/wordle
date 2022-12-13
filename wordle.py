@@ -66,12 +66,12 @@ def gameplay(answer):
             if letter in answer and letter == answer[i] and letter in incorrect_letters:
                 position_letter[i] = "1"
                 letter_checked[i] = "1"
-#             if letter in answer and validation.count(letter) > answer.count(letter) and letter in incorrect_letters:
-#                 position_letter[validation.find(letter)] = "2"
-#                 letter_checked[i] = "1"
-#                 rev_validation = validation[::-1]
-#                 rev_index = rev_validation.find(letter)
-#                 letter_checked[rev_index] = "0"
+            if letter in answer and validation.count(letter) > answer.count(letter) and letter in incorrect_letters:
+                position_letter[validation.find(letter)] = "2"
+                letter_checked[i] = "1"
+                rev_validation = validation[::-1]
+                rev_index = rev_validation.find(letter)
+                letter_checked[rev_index] = "0"
             if letter in answer and validation.count(letter) == answer.count(letter) and letter != answer[i]:
                 position_letter[i] = "2"
                 letter_checked[i] = "1"
