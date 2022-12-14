@@ -6,7 +6,7 @@ def get_random_word():
     for word in open_target_words:
         lst_target_words.append(word.strip())
     open_target_words.close()
-    target_word = random.choice(open_target_words)
+    target_word = random.choice(lst_target_words)
     return target_word
 
 
