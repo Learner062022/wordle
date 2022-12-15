@@ -57,34 +57,23 @@ def gameplay(answer):
             print("\n" + "Winner!")
             break
         for letter in validation:
-            if letter in answer and validation.count(letter) != answer.count(letter) or letter not in answer:
-                position_letter[i] = "0"
-                letter_checked[i] = "1"
+            if validation.count(letter) != answer.count(letter):
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
                     incorrect_letters.sort()
-            if letter in answer and letter == answer[i] and letter in incorrect_letters:
-                position_letter[i] = "1"
+            if validation.count(letter) == answer.count(letter):
+                if letter != answer[i]:
+                    position_letter[i] = "2"
+                    letter_checked[i] = "1"
+                if letter == answer[i]:
+                    position_letter[i] = "1"
+                    letter_checked[i] = "1"
+            if incorrect_letters[i] not in validation:
+                position_letter[i] = "0"
                 letter_checked[i] = "1"
-            if letter in answer and validation.count(letter) > answer.count(letter) and letter in incorrect_letters:
-                position_letter[validation.find(letter)] = "2"
-                letter_checked[i] = "1"
-                rev_validation = validation[::-1]
-                rev_index = rev_validation.find(letter)
-                letter_checked[rev_index] = "0"
-            if letter in answer and validation.count(letter) == answer.count(letter) and letter != answer[i]:
-                position_letter[i] = "2"
-                letter_checked[i] = "1"
-            if letter in answer and validation.count(letter) == answer.count(letter) and letter == answer[i]:
-                position_letter[i] = "1"
-                letter_checked[i] = "1"
-            i += 1
-            if i == 5:
-                i = 0
-                num_attempts += 1
-                print(position_letter)
-                print(incorrect_letters)
-                print(letter_checked)
+            # if incorrect_letters[i] in validation:
+                # rev_validation = validation[::-1]
+                # rev_index = rev_validation.find(letter)
             i += 1
             if i == 5:
                 i = 0
