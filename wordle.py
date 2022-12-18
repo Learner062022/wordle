@@ -43,7 +43,7 @@ def validate_guess(answer):
 
                 
 def validate_letters(answer):
-    """Returns the letters that are not in the guess and verifies positions of the guesses letters
+    """Returns the letters that are not in the guess and verifies the letters positions
     """
     position_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
