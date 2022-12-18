@@ -66,19 +66,19 @@ def validate_letters(answer):
                         position_letters[index_letter] = "1"
                         letters_checked[index_letter] = "1"
                 if validation.count(letter) < answer.count(letter):
-                    if validation[index_letter] == answer[index_letter]:
+                    if validation[index_letter] != answer[index_letter]:
                         position_letters[index_letter] = "2"
                         letters_checked[index_letter] = "1"
                 # if validation.count(letter) > answer.count(letter):
+                # pass
                 # if validation.count(letter) == answer.count(letter) and validation.count(letter) > 1 and answer.count(letter) > 1:
-                # need to join position_letters before returning it
-        return position_letters
+                # pass
+        return position_letters, incorrect_letters
              
         
 def colour_letters(answer):
-    """Colours the incorrect letters and the guesses letters
+    """Colours the incorrect letters and the guesses letters and returns them 
     """
-    validation = validate_letters(answer)
     pass
 
 
@@ -91,41 +91,41 @@ def gameplay(answer):
     """Executes the functions until attempts are exhausted"""
     display = format_display(answer)
     num_attempts = 0
-    while num_attempts <= 7:
-        print("Attempt number " + str(num_attempts) + ":" + "\n")
-        validation = validate_guess(answer)
-        print(validation)
-        if validation == answer:
-            print("\n" + "Winner!")
-            break
-        for letter in validation:
-            if validation.count(letter) != answer.count(letter):
-                if letter not in incorrect_letters:
-                    incorrect_letters.append(letter)
-                    incorrect_letters.sort()
-            if validation.count(letter) == answer.count(letter):
-                if letter != answer[i]:
-                    position_letter[i] = "2"
-                    letter_checked[i] = "1"
-                if letter == answer[i]:
-                    position_letter[i] = "1"
-                    letter_checked[i] = "1"
-            if incorrect_letters[i] not in validation:
-                position_letter[i] = "0"
-                letter_checked[i] = "1"
-            # if incorrect_letters[i] in validation:
-                # rev_validation = validation[::-1]
-                # rev_index = rev_validation.find(letter)
-            i += 1
-            if i == 5:
-                i = 0
-                num_attempts += 1
-                formatted_colours = " ".join(position_letter)
-                formatted_incorrect_letters = " ".join(incorrect_letters)
-                display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
-                print(display)
-    else:
-        print("No more available attempts")
+#     while num_attempts <= 7:
+#         print("Attempt number " + str(num_attempts) + ":" + "\n")
+#         validation = validate_guess(answer)
+#         print(validation)
+#         if validation == answer:
+#             print("\n" + "Winner!")
+#             break
+#         for letter in validation:
+#             if validation.count(letter) != answer.count(letter):
+#                 if letter not in incorrect_letters:
+#                     incorrect_letters.append(letter)
+#                     incorrect_letters.sort()
+#             if validation.count(letter) == answer.count(letter):
+#                 if letter != answer[i]:
+#                     position_letter[i] = "2"
+#                     letter_checked[i] = "1"
+#                 if letter == answer[i]:
+#                     position_letter[i] = "1"
+#                     letter_checked[i] = "1"
+#             if incorrect_letters[i] not in validation:
+#                 position_letter[i] = "0"
+#                 letter_checked[i] = "1"
+#             # if incorrect_letters[i] in validation:
+#                 # rev_validation = validation[::-1]
+#                 # rev_index = rev_validation.find(letter)
+#             i += 1
+#             if i == 5:
+#                 i = 0
+#                 num_attempts += 1
+#                 formatted_colours = " ".join(position_letter)
+#                 formatted_incorrect_letters = " ".join(incorrect_letters)
+#                 display = "\n" + formatted_colours + "\n" + formatted_incorrect_letters + "\n"
+#                 print(display)
+#     else:
+#         print("No more available attempts")
 
 
-    gameplay(answer)
+#     gameplay(answer)
