@@ -41,14 +41,56 @@ def validate_guess(answer):
             elif prompt_user not in dict_words:
                 prompt_user = input("The word doesn't exist - Enter another word ")
 
-
-def gameplay(answer):
-    '''Verifies the guesse's letters positions, returns the incorrect letters and the attempt number'''
-    i = 0
-    position_letter = [0, 0, 0, 0, 0]
-    letter_checked = [0, 0, 0, 0, 0]
+                
+def validate_letters(answer):
+    """Returns the letters that are not in the guess and verifies positions of the guesses letters
+    """
+    position_letters = [0, 0, 0, 0, 0]
+    letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
-    num_attempts = 1
+    validation = validate_guess(answer)
+    rev_validation = validation[::-1]
+    while True:
+        for letter in validation:
+            index_letter = validation.find(letter)
+            if letter not in answer or validation.count(letter) != answer.count(letter):
+                if letter not in incorrect_letters:
+                    incorrect_letters.append(letter)
+                    incorrect_letters.sort()
+            if letter not in answer:
+                position_letters[index_letter] = "0"
+                letters_checked[index_letter] = "1"
+            if letter in answer:
+                if validation.count(letter) == answer.count(letter) or validation.count(letter) != answer.count(letter):
+                    if letter == answer[index_letter]:
+                        position_letters[index_letter] = "1"
+                        letters_checked[index_letter] = "1"
+                if validation.count(letter) < answer.count(letter):
+                    if validation[index_letter] == answer[index_letter]:
+                        position_letters[index_letter] = "2"
+                        letters_checked[index_letter] = "1"
+                # if validation.count(letter) > answer.count(letter):
+                # if validation.count(letter) == answer.count(letter) and validation.count(letter) > 1 and answer.count(letter) > 1:
+                # need to join position_letters before returning it
+        return position_letters
+             
+        
+def colour_letters(answer):
+    """Colours the incorrect letters and the guesses letters
+    """
+    validation = validate_letters(answer)
+    pass
+
+
+def format_display(answer):
+    coloured_letters = colour_letters(answer)
+    pass
+            
+                       
+def gameplay(answer):
+    """Executes the functions until attempts are exhausted"""
+    display = format_display(answer)
+    num_attempts = 0
     while num_attempts <= 7:
         print("Attempt number " + str(num_attempts) + ":" + "\n")
         validation = validate_guess(answer)
@@ -85,5 +127,5 @@ def gameplay(answer):
     else:
         print("No more available attempts")
 
-  
-gameplay(answer)
+
+    gameplay(answer)
