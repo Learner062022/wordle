@@ -43,37 +43,41 @@ def validate_guess(answer):
 
                 
 def validate_letters(answer):
-    """Returns the letters that are not in the guess and verifies the letters positions
+    """Returns the letters that are not in the guess and verifies positions of the guesses letters
     """
     position_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
     validation = validate_guess(answer)
     rev_validation = validation[::-1]
-    while True:
+    counter = 0
+    while counter != 5:
         for letter in validation:
-            index_letter = validation.find(letter)
             if letter not in answer or validation.count(letter) != answer.count(letter):
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
                     incorrect_letters.sort()
             if letter not in answer:
-                position_letters[index_letter] = "0"
-                letters_checked[index_letter] = "1"
-            if letter in answer:
-                if validation.count(letter) == answer.count(letter) or validation.count(letter) != answer.count(letter):
-                    if letter == answer[index_letter]:
-                        position_letters[index_letter] = "1"
-                        letters_checked[index_letter] = "1"
-                if validation.count(letter) < answer.count(letter):
-                    if validation[index_letter] != answer[index_letter]:
-                        position_letters[index_letter] = "2"
-                        letters_checked[index_letter] = "1"
-                # if validation.count(letter) > answer.count(letter):
-                # pass
-                # if validation.count(letter) == answer.count(letter) and validation.count(letter) > 1 and answer.count(letter) > 1:
-                # pass
-        return position_letters, incorrect_letters
+                position_letters[counter] = "0"
+                letters_checked[counter] = "1"
+            if letter == answer[counter]:
+                position_letters[counter] = "1"
+                letters_checked[counter] = "1"
+            if letter != answer[counter]:
+                if validation.count(letter) == answer.count(letter):
+                    position_letters[counter] = "2"
+                    letters_checked[counter] = "1"
+                if validation.count(letter) != answer.count(letter):
+                    position_letters[counter] = "0"
+                    letters_checked[counter] = "1"
+            if validation.count(letter) > answer.count(letter):
+                if letter in incorrect_letters and letter in answer:
+                    position_letters[validation.find(letter)] = "2"
+                    letters_checked[validation.find(letter)] = "1"
+                    position_letters[rev_validation.find(letter)] = "0"
+                    letters_checked[rev_validation.find(letter)] = "1"
+            counter += 1
+            print(position_letters)
              
         
 def colour_letters(answer):
