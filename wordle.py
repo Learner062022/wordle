@@ -54,7 +54,7 @@ def validate_letters(answer):
     counter = 0
     while counter != 5:
         for letter in validated_guess:
-            if letter not in answer or validated_guess.count(letter) != answer.count(letter):
+            if letter not in answer:
                 if letter not in incorrect_letters:
                     incorrect_letters.append(letter)
                     incorrect_letters.sort()
