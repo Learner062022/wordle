@@ -41,62 +41,63 @@ def validate_guess(answer):
             elif prompt_user not in dict_words:
                 prompt_user = input("The word doesn't exist - Enter another word ")
 
+                
 def validate_letters(answer):
-    """Joins the letters that are not in the guess and the positions of the guesses letters after their
-    positions are checked
-    """
-    position_letters = [0, 0, 0, 0, 0]
+    """Determines the letters that are not in the guess and the positions of the guesses letters"""
+    positions_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
     validated_guess = validate_guess(answer)
     rev_validation = validated_guess[::-1]
-    counter = 0 
-    while counter != 5:
-        for letter in validated_guess:
-            if letter not in answer:
-                if letter not in incorrect_letters:
-                    incorrect_letters.append(letter)
-                    incorrect_letters.sort()
-            if letter not in answer:
-                position_letters[counter] = "0"
-                letters_checked[counter] = "1"
-            if letter == answer[counter]:
-                position_letters[counter] = "1"
-                letters_checked[counter] = "1"
-            if letter != answer[counter]:
-                if validated_guess.count(letter) == answer.count(letter):
-                    position_letters[counter] = "2"
-                    letters_checked[counter] = "1"
-                if validated_guess.count(letter) != answer.count(letter):
-                    position_letters[counter] = "0"
-                    letters_checked[counter] = "1"
-                    if letter in answer:
-                        position_letters[validated_guess.index(letter)] = "2"
-                        letters_checked[validated_guess.index(letter)] = "1"
-                        position_letters[rev_validation.find(letter)] = "0"
-                        letters_checked[rev_validation.find(letter)] = "1"
-            counter += 1
-        if counter == 5:
-            position_letters = " ".join(position_letters)
-            incorrect_letters = " ".join(incorrect_letters)
-            return position_letters, incorrect_letters
+    index = 0
+    for letter in validated_guess:
+        if letter not in answer and letter not in incorrect_letters:
+            incorrect_letters.append(letter)
+            incorrect_letters.sort()
+            positions_letters[index] = "0"
+            letters_checked[index] = "1"
+        if letter == answer[index]:
+            positions_letters[index] = "1"
+            letters_checked[index] = "1"
+        if letter != answer[index]:
+            if validated_guess.count(letter) == answer.count(letter):
+                positions_letters[index] = "2"
+                letters_checked[index] = "1"
+            if validated_guess.count(letter) != answer.count(letter):
+                positions_letters[index] = "0"
+                letters_checked[index] = "1"
+                if letter in answer:
+                    positions_letters[validated_guess.index(letter)] = "2"
+                    letters_checked[validated_guess.index(letter)] = "1"
+                    positions_letters[rev_validation.find(letter)] = "0"
+                    letters_checked[rev_validation.find(letter)] = "1"
+        index += 1
+    if index == 5:
+        return positions_letters, incorrect_letters, validated_guess
 
 
-var1, var2 = validate_letters(answer)
-             
-        
-def colour_letters(answer):
-    validated_letters = validate_letters(answer)
-    """Colours the incorrect letters and the guesses letters"""
-    pass
-
-
-def format_display(answer):
-    coloured_letters = colour_letters(answer)
-    pass
+def colour_letters():
+    scoring, keyboard, guess = validate_letters(answer)
+    from termcolor import colored
+    index = 0
+    separate_guess = list(guess)
+    for num in scoring:
+        keyboard[index] = colored(keyboard[index], "red")
+        if num == "1":
+            separate_guess[index] = colored(separate_guess[index], "green")
+        if num == "2":
+            separate_guess[index] = colored(separate_guess[index], "yellow")
+        if num == "0":
+            separate_guess[index] = colored(separate_guess[index], "red")
+        index += 1
+        if index == 5:
+            connected_guess = " ".join(separate_guess)
+            connected_keyboard = " ".join(keyboard)
+            return connected_guess, connected_keyboard
             
+            
+guess, keyword = colour_letters()
 
-def gameplay(answer):
-    """Executes the game"""
-    formatted_display = format_display(answer)
-    pass
+            
+def gameplay(attempt, invalid_letters):
+    
