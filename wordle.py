@@ -1,12 +1,12 @@
 def get_random_word():
     """Chooses a word at random"""
-    lst_target_words = []
+    target_words = []
     import random
     open_target_words = open("target_words.txt")
     for word in open_target_words:
-        lst_target_words.append(word.strip())
+        target_words.append(word.strip())
     open_target_words.close()
-    target_word = random.choice(lst_target_words)
+    target_word = random.choice(target_words)
     return target_word
 
 
@@ -16,12 +16,12 @@ print(answer)
 
 def get_dict_words():
     """lists dictionary words"""
-    lst_dict_words = []
+    dict_words = []
     open_all_words_file = open("all_words.txt")
     for line in open_all_words_file:
-        lst_dict_words.append(line.strip())
+        dict_words.append(line.strip())
     open_all_words_file.close()
-    return lst_dict_words
+    return dict_words
 
 
 def validate_guess(answer):
@@ -77,9 +77,12 @@ def validate_letters(answer):
                         letters_checked[rev_validation.find(letter)] = "1"
             counter += 1
         if counter == 5:
-            " ".join(position_letters)
-            " ".join(incorrect_letters)
+            position_letters = " ".join(position_letters)
+            incorrect_letters = " ".join(incorrect_letters)
             return position_letters, incorrect_letters
+
+
+var1, var2 = validate_letters(answer)
              
         
 def colour_letters(answer):
