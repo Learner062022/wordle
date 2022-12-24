@@ -1,5 +1,5 @@
 def get_random_word():
-    """Chooses a word at random"""
+    """Chooses a random word"""
     target_words = []
     import random
     open_target_words = open("target_words.txt")
@@ -24,9 +24,9 @@ def get_dict_words():
 
 
 def validate_guess(answer):
-    """Verifies that the guess is the correct length and the guess is legible"""
+    """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
-    prompt_user = input("Enter a 5 lettered word here - ")
+    prompt_user = input("Enter a 5 lettered word ")
     while True:
         size_guess = len(prompt_user)
         if size_guess != 5:
@@ -41,8 +41,7 @@ def validate_guess(answer):
                 prompt_user = input("The word doesn't exist - Enter another word ")
 
                 
-def validate_letters(answer):
-    """Validates the guesses letters and their positions"""
+def validate_guesses_letters(answer):
     positions_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
@@ -76,30 +75,39 @@ def validate_letters(answer):
             return positions_letters, incorrect_letters, validated_guess
 
 
-def colour_letters():
-    """Colours the guesses letters"""
-    scoring, keyboard, guess = validate_letters(answer)
+def colour_guesses_letters():
+    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)
     from termcolor import colored
     index = 0
     separate_guess = list(guess)
     while index != 5:
-        keyboard[index] = colored(keyboard[index], "red")
-        if scoring[index] == "1":
+        wrong_letters[index] = colored(wrong_letters[index], "red")
+        if letters_positions[index] == "1":
             separate_guess[index] = colored(separate_guess[index], "green")
-        if scoring[index] == "2":
+        if letters_positions[index] == "2":
             separate_guess[index] = colored(separate_guess[index], "yellow")
-        if scoring[index] == "0":
+        if letters_positions[index] == "0":
             separate_guess[index] = colored(separate_guess[index], "red")
         index += 1
         connected_guess = " ".join(separate_guess)
-        connected_keyboard = " ".join(keyboard)
-        return connected_guess, connected_keyboard
+        connected_letters = " ".join(wrong_letters)
+        return connected_guess, connected_letters
 
             
-def gameplay():
-    prediction, unaccepted_letters = colour_letters()
-    num_attempts = 0
-    while num_attempts != 6:
+def gameplay(answer):
+    prediction, unaccepted_letters = colour_guesses_letters()
+    num_attempts = 1
+    while True:
         attempt_num = "Attempt number " + str(num_attempts) + ":"
-        display = "\n" + attempt_num + "\n" + prediction + "\n" + unaccepted_letters
-        num_attempts += 1
+        if num_attempts != 7:
+            if prediction == answer:
+                prediction = input("Winner! Enter Y if you would like to play again, N if not: ")
+            if prediction != answer:
+                print(attempt_num + "\n" + prediction + "\n" + unaccepted_letters + "\n")
+                num_attempts += 1
+        if num_attempts == 7:
+            prediction = input("No more available attempts, enter Y if you would like to play again, N if not: ")
+        if prediction == "Y":
+            pass
+        if prediction == "N":
+            break
