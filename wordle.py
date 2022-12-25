@@ -23,7 +23,7 @@ def get_dict_words():
     return dict_words
 
 
-def validate_guess(answer):
+def validate_guess():
     """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
     prompt_user = input("Enter a 5 lettered word ")
