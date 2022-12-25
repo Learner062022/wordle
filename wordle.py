@@ -45,7 +45,7 @@ def validate_guesses_letters(answer):
     positions_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
-    validated_guess = validate_guess(answer)
+    validated_guess = validate_guess()
     rev_validation = validated_guess[::-1]
     index = 0
     while index != 5:
