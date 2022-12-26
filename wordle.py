@@ -46,6 +46,7 @@ def validate_guesses_letters(answer):
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
     validated_guess = validate_guess()
+    lst_guess = list(validated_guess)
     rev_validation = validated_guess[::-1]
     index = 0
     while index != 5:
@@ -71,7 +72,7 @@ def validate_guesses_letters(answer):
                         positions_letters[rev_validation.find(letter)] = "0"
                         letters_checked[rev_validation.find(letter)] = "1"
             index += 1
-        return positions_letters, incorrect_letters
+        return positions_letters, incorrect_letters, lst_guess
 
 
 def colour_guesses_letters(answer):
