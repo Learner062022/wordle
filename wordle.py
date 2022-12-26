@@ -66,48 +66,37 @@ def validate_guesses_letters(answer):
                     positions_letters[index] = "0"
                     letters_checked[index] = "1"
                     if letter in answer:
-                        positions_letters[validated_guess.index(letter)] = "2"
-                        letters_checked[validated_guess.index(letter)] = "1"
+                        positions_letters[validated_guess.find(letter)] = "2"
+                        letters_checked[validated_guess.find(letter)] = "1"
                         positions_letters[rev_validation.find(letter)] = "0"
                         letters_checked[rev_validation.find(letter)] = "1"
             index += 1
-        if index == 5:
-            return positions_letters, incorrect_letters, validated_guess
+        return positions_letters, incorrect_letters
 
 
-def colour_guesses_letters():
-    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)
+def colour_guesses_letters(answer):
+    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)  # why lists are appearing here
     from termcolor import colored
     index = 0
-    separate_guess = list(guess)
-    while index != 5:
-        wrong_letters[index] = colored(wrong_letters[index], "red")
-        if letters_positions[index] == "1":
-            separate_guess[index] = colored(separate_guess[index], "green")
-        if letters_positions[index] == "2":
-            separate_guess[index] = colored(separate_guess[index], "yellow")
-        if letters_positions[index] == "0":
-            separate_guess[index] = colored(separate_guess[index], "red")
-        index += 1
-        connected_guess = " ".join(separate_guess)
-        connected_letters = " ".join(wrong_letters)
-        return connected_guess, connected_letters
+    while True:
+        if index != 5:
+            for num in range(len(letters_positions)):
+                if num == "1":
+                    guess[letters_positions.index(num)] = colored(letters_positions[num], "green")
+                if num == "2":
+                    guess[letters_positions.index(num)] = colored(letters_positions[num], "yellow")
+                if num == "0":
+                    guess[letters_positions.index(num)] = colored(letters_positions[num], "red")
+                index += 1
+        if index == 5:
+            index = 0
+            for letter in wrong_letters:
+                wrong_letters[index] = colored(letter, "red")
+                index += 1
+        if index == len(wrong_letters):
+            coloured_guess = " ".join(guess)
+            coloured_letters = " ".join(wrong_letters)
+            return coloured_guess, coloured_letters
 
             
-def gameplay(answer):
-    prediction, unaccepted_letters = colour_guesses_letters()
-    num_attempts = 1
-    while True:
-        attempt_num = "Attempt number " + str(num_attempts) + ":"
-        if num_attempts != 7:
-            if prediction == answer:
-                prediction = input("Winner! Enter Y if you would like to play again, N if not: ")
-            if prediction != answer:
-                print(attempt_num + "\n" + prediction + "\n" + unaccepted_letters + "\n")
-                num_attempts += 1
-        if num_attempts == 7:
-            prediction = input("No more available attempts, enter Y if you would like to play again, N if not: ")
-        if prediction == "Y":
-            pass
-        if prediction == "N":
-            break
+
