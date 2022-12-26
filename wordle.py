@@ -76,7 +76,7 @@ def validate_guesses_letters(answer):
 
 
 def colour_guesses_letters(answer):
-    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)  # why lists are appearing here
+    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)
     from termcolor import colored
     index = 0
     while True:
