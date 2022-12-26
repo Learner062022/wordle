@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-26T02:40:33.428Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="aBjPAFXZ27L-ChcikceE" version="20.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-26T09:46:21.031Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="xsf4PgGh6_lmhZVoxn0-" version="20.7.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1781" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -36,22 +36,22 @@
             <mxPoint x="414" y="60" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-10" value="Assign a list of integers that represents the letters&#39; accuracy within the guess to a declared variable (positions_letters)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-10" value="Assign a list of integers that represents the letters&#39; accuracy within the guess to a variable (positions_letters)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="220" y="240" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-11" value="Assign a list of integers that represents that the letters within the guess have been checked to a declared variable (letters_checked)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-11" value="Assign a list of integers that represents that the letters within the guess have been checked to a variable (letters_checked)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-40" y="240" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-12" value="Assign a list to store the guesses letters that are not in the answer to a declared variable (incorrect_letters)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-12" value="Assign a list to store the guesses letters that are not in the answer to a variable (incorrect_letters)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="90" y="240" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-13" value="Assign guess validation function to a declared variable (validated_guess)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-13" value="Assign guess validation function to a variable (validated_guess)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="750" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-14" value="Assign reversed guess to a declared variable (rev_validation)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-14" value="Assign reversed guess to a variable (rev_validation)" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="620" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-15" value="Assign &quot;0&quot; to a declared variable (index) to use as the slice operator&#39;s index" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-15" value="Assign &quot;0&quot; to a variable (index) to use as the slice operator&#39;s index" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="490" y="240" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="_akcpinGxXgbrrlJvvGz-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="_akcpinGxXgbrrlJvvGz-52" target="_akcpinGxXgbrrlJvvGz-20" edge="1">
