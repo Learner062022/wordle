@@ -41,12 +41,11 @@ def validate_guess():
                 prompt_user = input("The word doesn't exist - Enter another word ")
 
                 
-def validate_guesses_letters(answer):
+def validate_guesses_letters_positions(answer):
     positions_letters = [0, 0, 0, 0, 0]
     letters_checked = [0, 0, 0, 0, 0]
     incorrect_letters = []
     validated_guess = validate_guess()
-    lst_guess = list(validated_guess)
     rev_validation = validated_guess[::-1]
     index = 0
     while index != 5:
@@ -72,29 +71,27 @@ def validate_guesses_letters(answer):
                         positions_letters[rev_validation.find(letter)] = "0"
                         letters_checked[rev_validation.find(letter)] = "1"
             index += 1
-        return positions_letters, incorrect_letters, lst_guess
+        return positions_letters, incorrect_letters, validated_guess
 
 
 def colour_guesses_letters(answer):
-    letters_positions, wrong_letters, guess = validate_guesses_letters(answer)
+    letters_positions, wrong_letters, guess = validate_guesses_letters_positions(answer)
+    lst_guess = list(guess)
     from termcolor import colored
     index = 0
     while True:
-        if index != 5:
-            for num in range(len(letters_positions)):
-                if num == "1":
-                    guess[letters_positions.index(num)] = colored(letters_positions[num], "green")
-                if num == "2":
-                    guess[letters_positions.index(num)] = colored(letters_positions[num], "yellow")
-                if num == "0":
-                    guess[letters_positions.index(num)] = colored(letters_positions[num], "red")
-                index += 1
+        for num in letters_positions:
+            if num == "1":
+                lst_guess[index] = colored(guess[index], "green")
+            if num == "2":
+                lst_guess[index] = colored(guess[index], "yellow")
+            if num == "0":
+                lst_guess[index] = colored(guess[index], "red")
+            if guess[index] in wrong_letters:
+                index_wrong_letter = wrong_letters.index(guess[index])
+                wrong_letters[index_wrong_letter] = colored(wrong_letters[index_wrong_letter], "red")
+            index += 1
         if index == 5:
-            index = 0
-            for letter in wrong_letters:
-                wrong_letters[index] = colored(letter, "red")
-                index += 1
-        if index == len(wrong_letters):
             coloured_guess = " ".join(guess)
             coloured_letters = " ".join(wrong_letters)
             return coloured_guess, coloured_letters
