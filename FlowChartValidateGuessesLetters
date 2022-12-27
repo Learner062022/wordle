@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-27T12:50:20.561Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="LTndNg-1Moagow8Q174U" version="20.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-27T12:56:03.966Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="C7ClrMle6dZLvbTcWuJT" version="20.7.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1781" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -112,7 +112,7 @@
         <mxCell id="_akcpinGxXgbrrlJvvGz-33" value="if index == 5" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="870" y="180" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="_akcpinGxXgbrrlJvvGz-34" value="Return positions_letters, incorrect_letters" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="_akcpinGxXgbrrlJvvGz-34" value="Return positions_letters, incorrect_letters, validated_guess" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1010" y="190" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_akcpinGxXgbrrlJvvGz-35" value="True" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
