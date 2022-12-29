@@ -73,7 +73,7 @@ def validate_guesses_letters_positions(answer):
         return positions_letters, incorrect_letters, validated_guess
 
 
-def colour_guesses_letters(answer):
+def colour_guesses_letters():
     letters_positions, wrong_letters, guess = validate_guesses_letters_positions(answer)
     lst_guess = list(guess)
     from termcolor import colored
