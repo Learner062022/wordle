@@ -1,5 +1,4 @@
 def get_random_word():
-    """Chooses a random word"""
     target_words = []
     import random
     open_target_words = open("target_words.txt")
@@ -24,21 +23,21 @@ def get_dict_words():
 
 
 def validate_guess():
-    """Verifies guesses' length and legibility"""
+    """Verifies guesses length and legibility"""
     dict_words = get_dict_words()
-    prompt_user = input("Enter a 5 lettered word ")
+    prompt_user = input("Enter a 5 lettered word here ")
     while True:
         size_guess = len(prompt_user)
         if size_guess != 5:
             if size_guess > 5:
-                prompt_user = input("The word has more than 5 characters - Enter another word ")
+                prompt_user = input("The word has more than 5 characters - Enter another word here ")
             if size_guess < 5:
-                prompt_user = input("The word has less than 5 characters - Enter another word ")
+                prompt_user = input("The word has less than 5 characters - Enter another word here ")
         if size_guess == 5:
             if prompt_user in dict_words:
                 return prompt_user
             if prompt_user not in dict_words:
-                prompt_user = input("The word doesn't exist - Enter another word ")
+                prompt_user = input("The word doesn't exist - Enter another word here ")
 
                 
 def validate_guesses_letters_positions(answer):
@@ -79,7 +78,7 @@ def colour_guesses_letters(answer):
     lst_guess = list(guess)
     from termcolor import colored
     index = 0
-    while True:
+    while index != 5:
         for num in letters_positions:
             if num == "1":
                 lst_guess[index] = colored(guess[index], "green")
@@ -91,7 +90,6 @@ def colour_guesses_letters(answer):
                 index_wrong_letter = wrong_letters.index(guess[index])
                 wrong_letters[index_wrong_letter] = colored(wrong_letters[index_wrong_letter], "red")
             index += 1
-        if index == 5:
             coloured_guess = " ".join(guess)
             coloured_letters = " ".join(wrong_letters)
             return coloured_guess, coloured_letters
