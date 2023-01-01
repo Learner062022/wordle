@@ -22,11 +22,12 @@ def get_dict_words():
     return dict_words
 
 
-def validate_guess():
-    """Verifies guesses length and legibility"""
+def validate_guesses():
+    """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
-    prompt_user = input("Enter a 5 lettered word here ")
-    while True:
+    guesses = []
+    while len(guesses) != 6:
+        prompt_user = input("Enter a 5 lettered word here ")
         size_guess = len(prompt_user)
         if size_guess != 5:
             if size_guess > 5:
@@ -35,42 +36,47 @@ def validate_guess():
                 prompt_user = input("The word has less than 5 characters - Enter another word here ")
         if size_guess == 5:
             if prompt_user in dict_words:
-                return prompt_user
+                guesses.append(prompt_user)
             if prompt_user not in dict_words:
                 prompt_user = input("The word doesn't exist - Enter another word here ")
+    else:
+        return guesses
 
                 
 def validate_guesses_letters_positions(answer):
     positions_letters = [0, 0, 0, 0, 0]
-    letters_checked = [0, 0, 0, 0, 0]
-    incorrect_letters = []
-    validated_guess = validate_guess()
-    rev_validation = validated_guess[::-1]
+    guesses_incorrect_letters = []
+    guesses_positions_letters = []
+    validated_guesses = validate_guesses()
     index = 0
-    while index != 5:
-        for letter in validated_guess:
-            if letter not in answer and letter not in incorrect_letters:
-                incorrect_letters.append(letter)
-                incorrect_letters.sort()
-                positions_letters[index] = "0"
-                letters_checked[index] = "1"
-            if letter == answer[index]:
-                positions_letters[index] = "1"
-                letters_checked[index] = "1"
-            if letter != answer[index]:
-                if validated_guess.count(letter) == answer.count(letter):
-                    positions_letters[index] = "2"
-                    letters_checked[index] = "1"
-                if validated_guess.count(letter) != answer.count(letter):
-                    positions_letters[index] = "0"
-                    letters_checked[index] = "1"
-                    if letter in answer:
-                        positions_letters[validated_guess.find(letter)] = "2"
-                        letters_checked[validated_guess.find(letter)] = "1"
-                        positions_letters[rev_validation.find(letter)] = "0"
-                        letters_checked[rev_validation.find(letter)] = "1"
-            index += 1
-        return positions_letters, incorrect_letters, validated_guess
+    incorrect_letters = []
+    while len(guesses_positions_letters) != 6:
+        for guess in validated_guesses:
+            while index != 5:
+                for letter in guess:
+                    if letter not in answer and letter not in incorrect_letters:
+                        incorrect_letters.append(letter)
+                        incorrect_letters.sort()
+                        positions_letters[index] = "0"
+                    if letter == answer[index]:
+                        positions_letters[index] = "1"
+                    if letter != answer[index]:
+                        if guess.count(letter) == answer.count(letter):
+                            positions_letters[index] = "2"
+                        if guess.count(letter) != answer.count(letter):
+                            positions_letters[index] = "0"
+                            if letter in answer:
+                                rev_validation = guess[::-1]
+                                positions_letters[guess.find(letter)] = "2"
+                                positions_letters[rev_validation.find(letter)] = "0"
+                    index += 1
+            else:
+                guesses_positions_letters.append(positions_letters)
+                guesses_incorrect_letters.append(incorrect_letters)
+                index = 0
+                incorrect_letters.clear()
+    else:
+        return guesses_positions_letters, guesses_incorrect_letters, validated_guesses
 
 
 def colour_guesses_letters():
