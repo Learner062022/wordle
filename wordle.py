@@ -53,38 +53,40 @@ def validate_guesses_letters_positions(answer):
                 lst_guess[index_letter] = "0"
             if lst_guess[index_letter] == answer[index_letter]:
                 lst_guess[index_letter] = "1"
-            if lst_guess[index_letter] in answer:
-                if lst_guess[index_letter] != answer[index_letter]:
-                    if lst_guess.count(lst_guess[index_letter]) == answer.count(answer[index_letter]):
-                        lst_guess[index_letter] = "2"
-                    #  if lst_guess.count(lst_guess[index_letter]) != answer.count(answer[index_letter]):
-                    #  Resolve later
+            # if lst_guess[index_letter] in answer:
+            #     if lst_guess[index_letter] != answer[index_letter]:
+            #          if lst_guess.count(lst_guess[index_letter]) == answer.count(answer[index_letter]):
+            #          Resolve later
+            #          if lst_guess.count(lst_guess[index_letter]) != answer.count(answer[index_letter]):
+            #          Resolve later
+            #          Need to append incorrect letters to a list
             if index_letter == 4:
+                lst_guess = "".join(lst_guess)
                 guesses_positions_letters.append(lst_guess)
                 if len(guesses_positions_letters) == 6:
-                    return guesses_positions_letters, validate_guesses
-
-
-def colour_guesses_letters():
-    letters_positions, wrong_letters, guess = validate_guesses_letters_positions(answer)
-    lst_guess = list(guess)
+                    return guesses_positions_letters, validated_guesses
+                
+      
+def colour_guesses_letters(answer):
+    positions_letters, predictions = validate_guesses_letters_positions(answer)
+    coloured_guesses = []
     from termcolor import colored
-    index = 0
-    while index != 5:
-        for num in letters_positions:
-            if num == "1":
-                lst_guess[index] = colored(guess[index], "green")
-            if num == "2":
-                lst_guess[index] = colored(guess[index], "yellow")
-            if num == "0":
-                lst_guess[index] = colored(guess[index], "red")
-            if guess[index] in wrong_letters:
-                index_wrong_letter = wrong_letters.index(guess[index])
-                wrong_letters[index_wrong_letter] = colored(wrong_letters[index_wrong_letter], "red")
-            index += 1
-            coloured_guess = " ".join(guess)
-            coloured_letters = " ".join(wrong_letters)
-            return coloured_guess, coloured_letters
+    for index_positions_letters in range(len(positions_letters)):
+        prediction = predictions[index_positions_letters]
+        positions = positions_letters[index_positions_letters]
+        lst_prediction = list(prediction)
+        for index_position in range(len(positions)):
+            if positions[index_position] == "1":
+                lst_prediction[index_position] = colored(prediction[index_position], "green")
+            if positions[index_position] == "2":
+                lst_prediction[index_position] = colored(prediction[index_position], "yellow")
+            if positions[index_position] == "0":
+                lst_prediction[index_position] = colored(prediction[index_position], "red")
+        #  Need to colour incorrect letters
+        if index_position == 4:
+            coloured_guesses.append("".join(lst_prediction))
+            if len(coloured_guesses) == 6:
+                return coloured_guesses
 
             
 
