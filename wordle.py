@@ -44,39 +44,25 @@ def validate_guesses():
 
                 
 def validate_guesses_letters_positions(answer):
-    positions_letters = [0, 0, 0, 0, 0]
-    guesses_incorrect_letters = []
     guesses_positions_letters = []
     validated_guesses = validate_guesses()
-    index = 0
-    incorrect_letters = []
-    while len(guesses_positions_letters) != 6:
-        for guess in validated_guesses:
-            while index != 5:
-                for letter in guess:
-                    if letter not in answer and letter not in incorrect_letters:
-                        incorrect_letters.append(letter)
-                        incorrect_letters.sort()
-                        positions_letters[index] = "0"
-                    if letter == answer[index]:
-                        positions_letters[index] = "1"
-                    if letter != answer[index]:
-                        if guess.count(letter) == answer.count(letter):
-                            positions_letters[index] = "2"
-                        if guess.count(letter) != answer.count(letter):
-                            positions_letters[index] = "0"
-                            if letter in answer:
-                                rev_validation = guess[::-1]
-                                positions_letters[guess.find(letter)] = "2"
-                                positions_letters[rev_validation.find(letter)] = "0"
-                    index += 1
-            else:
-                guesses_positions_letters.append(positions_letters)
-                guesses_incorrect_letters.append(incorrect_letters)
-                index = 0
-                incorrect_letters.clear()
-    else:
-        return guesses_positions_letters, guesses_incorrect_letters, validated_guesses
+    for index_guess in range(len(validated_guesses)):
+        lst_guess = list(validated_guesses[index_guess])
+        for index_letter in range(len(lst_guess)):
+            if lst_guess[index_letter] not in answer:
+                lst_guess[index_letter] = "0"
+            if lst_guess[index_letter] == answer[index_letter]:
+                lst_guess[index_letter] = "1"
+            if lst_guess[index_letter] in answer:
+                if lst_guess[index_letter] != answer[index_letter]:
+                    if lst_guess.count(lst_guess[index_letter]) == answer.count(answer[index_letter]):
+                        lst_guess[index_letter] = "2"
+                    #  if lst_guess.count(lst_guess[index_letter]) != answer.count(answer[index_letter]):
+                    #  Resolve later
+            if index_letter == 4:
+                guesses_positions_letters.append(lst_guess)
+                if len(guesses_positions_letters) == 6:
+                    return guesses_positions_letters, validate_guesses
 
 
 def colour_guesses_letters():
