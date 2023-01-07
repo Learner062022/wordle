@@ -30,12 +30,12 @@ def validate_guess():
     if size_guess != 5:
         if size_guess > 5:
             prompt_user = input("The word has more than 5 characters - Enter another word here ")
-        if size_guess < 5:
+        else:
             prompt_user = input("The word has less than 5 characters - Enter another word here ")
-    if size_guess == 5:
+    else:
         if prompt_user in dict_words:
             return prompt_user
-        if prompt_user not in dict_words:
+        else:
             prompt_user = input("The word doesn't exist - Enter another word here ")
     
                 
@@ -54,8 +54,8 @@ def validate_guesses_letters_positions(answer):
             if validated_guess[index_letter] != answer[index_letter]:
                  if validated_guess.count(validated_guess[index_letter]) == answer.count(answer[index_letter]):
                      lst_guess[index_letter] = "2"
-        #          if lst_guess.count(lst_guess[index_letter]) != answer.count(answer[index_letter]):
-        #          Resolve later
+                 else:
+                     lst_guess[index_letter] = "0"
         if index_letter == 4:
             return lst_guess, validated_guess, incorrect_letters
             
