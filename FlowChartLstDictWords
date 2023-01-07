@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-20T03:12:58.552Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="tlinaNiLVZg9slve2RIU" version="20.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-07T15:35:36.037Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="UR6z1gqdDY15h4IHnIY_" version="20.8.3" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -66,16 +66,16 @@
             <mxPoint x="209.5" y="940" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="iybrkW3Nc_WYDJVj--N8-0" value="Open text file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="iybrkW3Nc_WYDJVj--N8-0" value="Open text file" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="280" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iybrkW3Nc_WYDJVj--N8-1" value="Remove the iteration&#39;s newline character" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="iybrkW3Nc_WYDJVj--N8-1" value="Remove newline characters" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iybrkW3Nc_WYDJVj--N8-2" value="Append iteration to list" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="iybrkW3Nc_WYDJVj--N8-2" value="Append iteration to list" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="610" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iybrkW3Nc_WYDJVj--N8-3" value="Close text file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="iybrkW3Nc_WYDJVj--N8-3" value="Close text file" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="720" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
