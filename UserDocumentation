@@ -1,18 +1,11 @@
 Objective:
-Guess what the 5 lettered word that has been chosen at random is within 6 attempts.
+Guess what a 5 lettered word is within 6 attempts.
 
-Rules:
+Rule:
 The words that are used as guesses must be in the Engish dictionary.
 
 Gameplay:
-Game completion occurs either when the word has been guessed or all attempts have been exhausted. The attempt's incrementation begins after the guess has been accepted.
-When the game commences the attempt number will appear, followed by a message saying "Enter a 5 lettered word here - ".
-The messages "The word has more than 5 characters - Enter another word" or "The word has less than 5 characters - Enter another word" will appear dependig on the guesse's length.
-The guess will be printed after it is accepted and its letters will be substituted with the numbers 1, 2, or 0 to indicate if they are in the other word and if their positions corresponds to the other word's letters.
-The numbers' meanings are discussed below:
-
-1 - the letters are in both words and are in the same position.
-2 - the letters are in both words but are not in the same position.
-0 - the letters are not in the other word. 
-
-The letters that are not in the other word will be printed beneath the guess. The letters will be alphabetically ordered and wont't be substituted with an integer.
+Users will be prompted asking if they want to exit the game or play again when attempts have been exhausted or when the word has been guessed. Game completion occurs when N is entered.
+Entering Y restarts the game. The attempt number is displayed above the prompt that asks the user to enter their word. The guess will appear below the prompt and its letters that are 
+not in the answer will be beneath the guess coloured red. The guesses letters will be coloured green, yellow or red. Green and yellow letters are in the other word, red letters are not.
+Green means that the letters' positions within the guess and answer are identical. Yellow indicates the opposite.
