@@ -51,11 +51,13 @@ def validate_guesses_letters_positions(answer):
         if validated_guess[index_letter] == answer[index_letter]:
             lst_guess[index_letter] = "1"
         if validated_guess[index_letter] in answer:
-            if validated_guess[index_letter] != answer[index_letter]:
-                 if validated_guess.count(validated_guess[index_letter]) == answer.count(answer[index_letter]):
-                     lst_guess[index_letter] = "2"
-                 else:
-                     lst_guess[index_letter] = "0"
+            if lst_guess[index_letter] != "1":
+                if validated_guess.count(lst_guess[index_letter]) == answer.count(lst_guess[index_letter]):
+                    lst_guess[index_letter] = "2"
+                if validated_guess.count(lst_guess[index_letter]) != answer.count(lst_guess[index_letter]):
+                    lst_guess[index_letter] = "0"
+                    # leave above
+                    # solve edge case (moons, nines)
         if index_letter == 4:
             return lst_guess, validated_guess, incorrect_letters
             
