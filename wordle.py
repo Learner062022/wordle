@@ -25,7 +25,7 @@ def get_dict_words():
 def validate_guess():
     """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
-    prompt_user = input("Enter a 5 lettered word here ")
+    prompt_user = input("Enter a 5 lettered word in lowercases here ")
     size_guess = len(prompt_user)
     if size_guess != 5:
         if size_guess > 5:
