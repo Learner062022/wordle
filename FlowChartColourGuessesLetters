@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-12T06:36:28.351Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="0tNV-X0a569TcivW-oMf" version="20.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-12T06:49:18.231Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="TqpRdq5lWsU9wn1RdGfV" version="20.8.3" type="github">
   <diagram id="Y8CxG1ZDc7yZneMQGFXa" name="Page-1">
     <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -42,7 +42,7 @@
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ugQgpD3udhsrqgWdf8O3-14" target="ugQgpD3udhsrqgWdf8O3-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ugQgpD3udhsrqgWdf8O3-14" value="Assign guess to function that verifies the guesses letters positions" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ugQgpD3udhsrqgWdf8O3-14" value="Assign guess to function that verifies the positions of the letters within the guess" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="620" y="180" width="150" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ugQgpD3udhsrqgWdf8O3-15" value="Convert guess to a list" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -51,7 +51,7 @@
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ugQgpD3udhsrqgWdf8O3-25" target="ugQgpD3udhsrqgWdf8O3-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ugQgpD3udhsrqgWdf8O3-25" value="Assign the list of integers that represents the letters accuracy within the guess to the function that verifies the guesses letters positions&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ugQgpD3udhsrqgWdf8O3-25" value="Assign the list of integers that represents the letters accuracy within the guess to the function that verifies the positions of the letters within the guess" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="490" y="180" width="120" height="130" as="geometry" />
         </mxCell>
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ugQgpD3udhsrqgWdf8O3-26" target="ugQgpD3udhsrqgWdf8O3-1" edge="1">
@@ -122,7 +122,7 @@
         <mxCell id="ugQgpD3udhsrqgWdf8O3-33" value="&lt;span style=&quot;box-sizing: border-box; color: var(--color-prettylights-syntax-keyword); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot; class=&quot;pl-k&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: rgb(36, 41, 47); font-family: ui-monospace, SFMono-Regular, &amp;quot;SF Mono&amp;quot;, Menlo, Consolas, &amp;quot;Liberation Mono&amp;quot;, monospace; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;element == &quot;1&quot;&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="380" y="400" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="0cJB-FBwsJJ-xDtLUTtI-2" value="Assign the list that stores the guesses letters that are not in the answer to the function that verifies the guesses letters positions" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="0cJB-FBwsJJ-xDtLUTtI-2" value="Assign the list that stores the guesses letters that are not in the answer to the function that verifies the positions of the letters within the guess" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="180" width="120" height="110" as="geometry" />
         </mxCell>
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-18" value="True" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
