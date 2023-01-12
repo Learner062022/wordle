@@ -55,10 +55,14 @@ def validate_guesses_letters_positions(answer):
                 if validated_guess.count(lst_guess[index_letter]) == answer.count(lst_guess[index_letter]):
                     lst_guess[index_letter] = "2"
                 if validated_guess.count(lst_guess[index_letter]) != answer.count(lst_guess[index_letter]):
-                    lst_guess[index_letter] = "0"
-                    # leave above
-                    # solve edge case (moons, nines)
+                    rev_guess = validated_guess[::-1]
+                    index_last_duplicate = rev_guess.find(lst_guess[index_letter])
+                    lst_guess[index_last_duplicate] = "0"
+                    index_init_duplicate = validated_guess.find(lst_guess[index_letter])
+                    lst_guess[index_init_duplicate] = "2"
+                    #  above works
         if index_letter == 4:
+            #  don't know why not showing here
             return lst_guess, validated_guess, incorrect_letters
             
       
