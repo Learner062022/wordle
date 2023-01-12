@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-08T04:35:48.506Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="bCWJB0CBtWU7_tYKumGP" version="20.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-12T06:39:45.909Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="DYqwOMJ6NNJan6ABpreD" version="20.8.3" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1781" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -122,7 +122,10 @@
         <mxCell id="ptn3g4onhtC2PUdfsWpV-0" value="Convert guess to a list" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="630" y="205" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ptn3g4onhtC2PUdfsWpV-8" value="Update list&#39;s element to &quot;0&quot;" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ptn3g4onhtC2PUdfsWpV-8" target="z5XCzT5s9UuplWIdqEwn-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ptn3g4onhtC2PUdfsWpV-8" value="reverse guess" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="70" y="650" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ptn3g4onhtC2PUdfsWpV-9" value="Update list&#39;s element to &quot;2&quot;" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -139,7 +142,7 @@
             <mxPoint x="200" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ptn3g4onhtC2PUdfsWpV-19" value="if letter != answer&#39;s letter&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="ptn3g4onhtC2PUdfsWpV-19" value="if list&#39;s element != &quot;1&quot;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="240" y="420" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ptn3g4onhtC2PUdfsWpV-27" value="True" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -151,7 +154,7 @@
         <mxCell id="0gnCy90iFrGtrFCDkH50-0" value="if letter&#39;s index == 4" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="90" y="310" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="UVuPWsGdp6xeWxY69j_5-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0gnCy90iFrGtrFCDkH50-2" target="UVuPWsGdp6xeWxY69j_5-0">
+        <mxCell id="UVuPWsGdp6xeWxY69j_5-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0gnCy90iFrGtrFCDkH50-2" target="UVuPWsGdp6xeWxY69j_5-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0gnCy90iFrGtrFCDkH50-2" value="return guess that was converted to a list, guess and the guesses incorrect letters" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -160,8 +163,29 @@
         <mxCell id="0gnCy90iFrGtrFCDkH50-4" value="True" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="130" y="390" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UVuPWsGdp6xeWxY69j_5-0" value="End" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="UVuPWsGdp6xeWxY69j_5-0" value="End" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-80" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="z5XCzT5s9UuplWIdqEwn-0" target="z5XCzT5s9UuplWIdqEwn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-0" value="Find index last duplicate letter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="720" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="z5XCzT5s9UuplWIdqEwn-2" target="z5XCzT5s9UuplWIdqEwn-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-2" value="Update list&#39;s element to &quot;0&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="780" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="z5XCzT5s9UuplWIdqEwn-4" target="z5XCzT5s9UuplWIdqEwn-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-4" value="Find index initial duplicate letter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="850" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z5XCzT5s9UuplWIdqEwn-6" value="Update list&#39;s element to &quot;2&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="910" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
