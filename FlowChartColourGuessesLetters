@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-08T04:36:13.445Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="_NObERzSQ12Ts5o0gZnR" version="20.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-12T06:36:28.351Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="0tNV-X0a569TcivW-oMf" version="20.8.3" type="github">
   <diagram id="Y8CxG1ZDc7yZneMQGFXa" name="Page-1">
     <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -131,10 +131,10 @@
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0cJB-FBwsJJ-xDtLUTtI-20" target="0cJB-FBwsJJ-xDtLUTtI-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0cJB-FBwsJJ-xDtLUTtI-20" value="if if element&#39;s index == len(list) - 1" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="0cJB-FBwsJJ-xDtLUTtI-20" value="if element&#39;s index == len(list) - 1" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="600" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="qgD1oBURLVRuLyMBM3xq-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0cJB-FBwsJJ-xDtLUTtI-23" target="qgD1oBURLVRuLyMBM3xq-1">
+        <mxCell id="qgD1oBURLVRuLyMBM3xq-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0cJB-FBwsJJ-xDtLUTtI-23" target="qgD1oBURLVRuLyMBM3xq-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-23" value="Return lists" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
@@ -146,7 +146,7 @@
         <mxCell id="0cJB-FBwsJJ-xDtLUTtI-24" value="Join lists" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="230" y="710" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="qgD1oBURLVRuLyMBM3xq-1" value="End" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="qgD1oBURLVRuLyMBM3xq-1" value="End" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="230" y="890" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
