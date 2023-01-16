@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-16T05:07:35.977Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="uWF2m-C5TTB6VSIEjRKI" version="20.8.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-16T05:34:31.192Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="cS1YgCbc3jFwDOIoZuO8" version="20.8.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -43,7 +43,7 @@
         <mxCell id="Kj0LVVoVERlmokhFl1mw-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Kj0LVVoVERlmokhFl1mw-60" target="Kj0LVVoVERlmokhFl1mw-67">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Kj0LVVoVERlmokhFl1mw-60" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace&quot; color=&quot;#24292f&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;if word in list&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Kj0LVVoVERlmokhFl1mw-60" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace&quot; color=&quot;#24292f&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;if word in dictionary&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="516.5" y="280" width="100" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Kj0LVVoVERlmokhFl1mw-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Kj0LVVoVERlmokhFl1mw-62" target="Kj0LVVoVERlmokhFl1mw-50">
@@ -73,7 +73,7 @@
         <mxCell id="Kj0LVVoVERlmokhFl1mw-69" value="True" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="331" y="290" width="50" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Kj0LVVoVERlmokhFl1mw-70" value="Assign an instantiated variable to the function that adds the dictionary words to a dictionary" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Kj0LVVoVERlmokhFl1mw-70" value="Assign an instantiated variable to the function that adds the all words file&#39;s words to a dictionary" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="364" y="90" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
