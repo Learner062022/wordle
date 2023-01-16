@@ -63,6 +63,7 @@ def validate_guesses_letters_positions(answer):
                     #  above works
         if index_letter == 4:
             #  don't know why not showing here
+            #  edge case (answer = moons, guess = nines)
             return lst_guess, validated_guess, incorrect_letters
             
       
