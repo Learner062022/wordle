@@ -1,4 +1,5 @@
 def get_random_word():
+    """Puts the target words into a dictionary"""
     target_words = dict()
     import random
     open_target_words = open("target_words.txt")
@@ -11,9 +12,9 @@ def get_random_word():
     return target_word
     
 answer = get_random_word()
-answer = "moons"
 
 def get_dict_words():
+    """Puts the dictionary words into a dictionary"""
     dict_words = dict()
     open_all_words_file = open("all_words.txt")
     for word in open_all_words_file:
@@ -41,33 +42,22 @@ def validate_guess():
         else:
             prompt_user = input("The word doesn't exist - Enter another word here ")
             
-def dict_answer(answer):
+def dict_answer_guess():
+    """Puts the guess and the answer into seperate dictionaries"""
     letters_count_answer = dict()
-    num_letters_answer = 0
-    for letter in answer:
-        letters_count_answer[letter] = letters_count_answer.get(letter, 0) + 1
-    for key in letters_count_answer:
-        num_letters_answer += letters_count_answer[key]
-    if num_letters_answer == 5:
-        return letters_count_answer
-        
-def dict_guess():
     validated_guess = validate_guess()
     letters_count_guess = dict()
-    num_letters_guess = 0
+    for letter in answer:
+        letters_count_answer[letter] = letters_count_answer.get(letter, 0) + 1
     for letter in validated_guess:
         letters_count_guess[letter] = letters_count_guess.get(letter, 0) + 1
-    for key in letters_count_guess:
-        num_letters_guess += letters_count_guess[key]
-    if num_letters_guess == 5:
-        return letters_count_guess, validated_guess
-    
+    return letters_count_guess, validated_guess, letters_count_answer
 
-def score_guess(answer):
-    guesses_letters, guess = dict_guess()
-    answers_letters = dict_answer(answer)
+def score_guess():
+    """Validates the letters' positions within the guess"""
+    guesses_letters, guess, answers_letters = dict_answer_guess()
     lst_guess = list(guess)
-    incorrect_letters = []
+    incorrect_letters = dict()
     for key in guesses_letters:
         if key in answers_letters:
             for index_letter in range(len(guess)):
@@ -83,12 +73,26 @@ def score_guess(answer):
                                 lst_guess[index_letter] = "0"
     # edge case moons, nines
         else:
-            if key not in incorrect_letters:
-                incorrect_letters.append(key)
-                incorrect_letters.sort() 
+            incorrect_letters[key] = incorrect_letters.get(key, 0) + 1
         if key in incorrect_letters:
             index_element_guess = lst_guess.index(key)
             lst_guess[index_element_guess] = "0"
-        return lst_guess, answer
+    return lst_guess, guess, incorrect_letters
                         
-score_guess(answer)
+def colour_guess():
+    """Colours the letters within the guess"""
+    num_prediction, estimate, wrong_letters = score_guess()
+    lst_estimate = list(estimate)
+    from termcolor import colored
+    for index_num in range(len(num_prediction)):
+        if num_prediction[index_num] == "1":
+            lst_estimate[index_num] = colored(estimate[index_num], "green")
+        if num_prediction[index_num] == "2":
+           lst_estimate[index_num] = colored(estimate[index_num], "yellow")
+        if num_prediction[index_num] == "0":
+             lst_estimate[index_num] = colored(estimate[index_num], "red")
+    lst_wrong_letters = list(wrong_letters.keys())
+    lst_wrong_letters.sort()
+    for index_letter in range(len(lst_wrong_letters)):
+        lst_wrong_letters[index_letter] = colored(lst_wrong_letters[index_letter], "red")
+    return "".join(lst_estimate), "".join(lst_wrong_letters)
