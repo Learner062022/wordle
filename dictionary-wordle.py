@@ -23,6 +23,8 @@ def get_dict_words():
     open_all_words_file.close()
     return dict_words
 
+dict_guesses = dict()
+
 def validate_guess():
     """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
@@ -36,6 +38,7 @@ def validate_guess():
     else:
         if prompt_user in dict_words:
             if prompt_user == prompt_user.lower():
+                dict_guesses[prompt_user] = dict_guesses.get(prompt_user, 0) + 1
                 return prompt_user
             else:
                 prompt_user = input("The word must be in lowercases - Enter another word here ")
