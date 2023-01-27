@@ -16,11 +16,11 @@ answer = get_random_word()
 def get_dict_words():
     """Puts the dictionary words into a dictionary"""
     dict_words = dict()
-    open_all_words_file = open("all_words.txt")
-    for word in open_all_words_file:
+    open_all_words = open("all_words.txt")
+    for word in open_all_words:
         word = word.strip()
         dict_words[word] = word
-    open_all_words_file.close()
+    open_all_words.close()
     return dict_words
 
 dict_guesses = dict()
@@ -36,14 +36,14 @@ def validate_guess():
         else:
             prompt_user = input("The word has less than 5 characters - Enter another word here ")
     else:
-        if prompt_user in dict_words:
-            if prompt_user == prompt_user.lower():
+        if prompt_user == prompt_user.lower():
+            if prompt_user in dict_words:
                 dict_guesses[prompt_user] = dict_guesses.get(prompt_user, 0) + 1
                 return prompt_user
             else:
-                prompt_user = input("The word must be in lowercases - Enter another word here ")
+                prompt_user = input("The word doesn't exist - Enter another word here ")
         else:
-            prompt_user = input("The word doesn't exist - Enter another word here ")
+            prompt_user = input("The word must be in lowercases - Enter another word here ")
             
 def dict_answer_guess():
     """Puts the guess and the answer into seperate dictionaries"""
@@ -65,21 +65,25 @@ def score_guess():
         if key in answers_letters:
             for index_letter in range(len(guess)):
                 if lst_guess[index_letter] == key:
-                    if answer[index_letter] == key:
+                    if lst_guess[index_letter] == answer[index_letter]:
                         lst_guess[index_letter] = "1"
+                        answers_letters[key] -= 1
                     else:
-                        if answers_letters[key] == guesses_letters[key]:
+                        if answers_letters[key] != 0:
+                            lst_guess[index_letter] = "2"
+                            answers_letters[key] -= 1
+                    if answers_letters[key] == 0:
+                        if key in lst_guess:
                             index_element = lst_guess.index(key)
-                            lst_guess[index_element] = "2"
-                        else:
-                            if lst_guess[index_letter] == key:
-                                lst_guess[index_letter] = "0"
-    # edge case moons, nines
+                            lst_guess[index_element] = "0"
         else:
             incorrect_letters[key] = incorrect_letters.get(key, 0) + 1
-        if key in incorrect_letters:
-            index_element_guess = lst_guess.index(key)
-            lst_guess[index_element_guess] = "0"
+    for key in incorrect_letters:
+        if key in lst_guess:
+            for element in lst_guess:
+                if element == key:
+                    index_element = lst_guess.index(key)
+                    lst_guess[index_element] = "0"
     return lst_guess, guess, incorrect_letters
                         
 def colour_guess():
