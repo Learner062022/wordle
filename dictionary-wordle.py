@@ -103,3 +103,29 @@ def colour_guess():
     for index_letter in range(len(lst_wrong_letters)):
         lst_wrong_letters[index_letter] = colored(lst_wrong_letters[index_letter], "red")
     return "".join(lst_estimate), "".join(lst_wrong_letters)
+
+def gameplay():
+    num_attempts = 1
+    while num_attempts != 7:
+        print("Attempt number " + str(num_attempts) + ":")
+        prediction, wrong_letters = colour_guess()
+        print(prediction)
+        print(wrong_letters)
+        num_attempts += 1
+        for key in dict_guesses:
+            global answer
+            if key == answer:
+                prompt_user = input("Winner! Enter Y here to play again, N if not? ")
+                if prompt_user == "Y":
+                    num_attempts = 1
+                    answer = get_random_word()
+                else:
+                    print("The game has finished")
+                    break
+    else:
+        prompt_user = input("No more available attempts! Enter Y here to play again, N if not? ")
+        if prompt_user == "Y":
+            num_attempts = 1
+            answer = get_random_word()
+        else:
+            print("The game has finished")
