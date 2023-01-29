@@ -1,5 +1,4 @@
 def get_random_word():
-    """Puts the target words into a dictionary"""
     target_words = dict()
     import random
     open_target_words = open("target_words.txt")
@@ -14,7 +13,6 @@ def get_random_word():
 answer = get_random_word()
 
 def get_dict_words():
-    """Puts the dictionary words into a dictionary"""
     dict_words = dict()
     open_all_words = open("all_words.txt")
     for word in open_all_words:
@@ -26,7 +24,6 @@ def get_dict_words():
 dict_guesses = dict()
 
 def validate_guess():
-    """Verifies guesses' length and legibility"""
     dict_words = get_dict_words()
     prompt_user = input("Enter a 5 lettered word in lowercases here ")
     size_guess = len(prompt_user)
@@ -46,7 +43,6 @@ def validate_guess():
             prompt_user = input("The word must be in lowercases - Enter another word here ")
             
 def dict_answer_guess():
-    """Puts the guess and the answer into seperate dictionaries"""
     letters_count_answer = dict()
     validated_guess = validate_guess()
     letters_count_guess = dict()
@@ -57,7 +53,6 @@ def dict_answer_guess():
     return letters_count_guess, validated_guess, letters_count_answer
 
 def score_guess():
-    """Validates the letters' positions within the guess"""
     guesses_letters, guess, answers_letters = dict_answer_guess()
     lst_guess = list(guess)
     incorrect_letters = dict()
@@ -87,7 +82,6 @@ def score_guess():
     return lst_guess, guess, incorrect_letters
                         
 def colour_guess():
-    """Colours the letters within the guess"""
     num_prediction, estimate, wrong_letters = score_guess()
     lst_estimate = list(estimate)
     from termcolor import colored
