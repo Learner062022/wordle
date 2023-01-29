@@ -115,7 +115,7 @@ def gameplay():
         for key in dict_guesses:
             global answer
             if key == answer:
-                prompt_user = input("Winner! Enter Y here to play again, N if not? ")
+                prompt_user = input("Winner! Enter Y here to play again, N if not ")
                 if prompt_user == "Y":
                     num_attempts = 1
                     answer = get_random_word()
@@ -123,7 +123,7 @@ def gameplay():
                     print("The game has finished")
                     break
     else:
-        prompt_user = input("No more available attempts! Enter Y here to play again, N if not? ")
+        prompt_user = input("No more available attempts! Enter Y here to play again, N if not ")
         if prompt_user == "Y":
             num_attempts = 1
             answer = get_random_word()
