@@ -5,7 +5,8 @@ Rule:
 The words that are used as guesses must be in the Engish dictionary.
 
 Gameplay:
-Users will be prompted asking if they want to exit the game or play again when attempts have been exhausted or when the word has been guessed. Game completion occurs when N is entered.
-Entering Y restarts the game. The attempt number is displayed above the prompt that asks the user to enter their word. The guess will appear below the prompt and its letters that are 
-not in the answer will be beneath the guess coloured red. The guesses letters will be coloured green, yellow or red. Green and yellow letters are in the other word, red letters are not.
-Green means that the letters' positions within the guess and answer are identical. Yellow indicates the opposite.
+Users will be prompted asking if they want to exit the game or play again when attempts have been exhausted or when the word has been guessed. 
+The attempt number is incremented after the guess is accepted. Game completion occurs when N is entered. Entering Y restarts the game. 
+The attempt number is displayed above the prompt that asks the user to enter their word. The guess will appear below the prompt after it's entered besides it
+with its letters being coloured green, yellow or red. Red letters are not in the answer, whereas green and yellow letters are. Green means that the guesses 
+letters' positions, or position, within the guess and answer are identical.
