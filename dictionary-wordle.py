@@ -121,7 +121,7 @@ def gameplay():
                 prediction, wrong_letters = colour_guess()
                 print(prediction)
                 print(wrong_letters)
-        if attempt_number == 6:
+        else:
             print('Answer was ' + answer)
             prompt = input('No more available attempts! Enter Y here to play again, N if not ')
             if prompt == 'Y':
