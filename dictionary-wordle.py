@@ -1,4 +1,4 @@
-def random_word():
+def get_random_word():
     target_words = dict()
     import random
     open_target_words = open("target_words.txt")
@@ -6,11 +6,11 @@ def random_word():
         word = word.strip()
         target_words[word] = word
     open_target_words.close()
-    lst_target_words = list(target_words.keys())
-    target_word = random.choice(lst_target_words)
+    target_words_keys = list(target_words.keys())
+    target_word = random.choice(target_words_keys)
     return target_word
     
-answer = random_word()
+answer = get_random_word()
 
 def get_all_words():
     all_words = dict()
@@ -23,7 +23,6 @@ def get_all_words():
 
 guesses = dict()
 
-def validate_guess():
 def validate_guess():
     all_words = get_all_words()
     while True:
@@ -44,7 +43,7 @@ def validate_guess():
                         else:
                             print('Not existing')
         else:
-            print('Enter a word')
+            print('Enter word')
             
 def dict_answer_guess():
     letters_count_answer = dict()
@@ -57,50 +56,50 @@ def dict_answer_guess():
     return letters_count_guess, validated_guess, letters_count_answer
 
 def score_guess():
-    guesses_letters, guess, answers_letters = dict_answer_guess()
-    lst_guess = list(guess)
+    letters_guess, guess, letters_answer = dict_answer_guess()
+    guess_listed = list(guess)
     incorrect_letters = dict()
-    for key in guesses_letters:
-        if key in answers_letters:
+    for key in letters_guess:
+        if key in letters_answer:
             for index_letter in range(len(guess)):
-                if lst_guess[index_letter] == key:
-                    if lst_guess[index_letter] == answer[index_letter]:
-                        lst_guess[index_letter] = '1'
-                        answers_letters[key] -= 1
+                if guess_listed[index_letter] == key:
+                    if guess_listed[index_letter] == answer[index_letter]:
+                        guess_listed[index_letter] = '1'
+                        letters_answer[key] -= 1
                     else:
-                        if answers_letters[key] != 0:
-                            lst_guess[index_letter] = '2'
-                            answers_letters[key] -= 1
-                    if answers_letters[key] == 0:
-                        if key in lst_guess:
-                            index_element = lst_guess.index(key)
-                            lst_guess[index_element] = '0'
+                        if letters_answer[key] != 0:
+                            guess_listed[index_letter] = '2'
+                            letters_answer[key] -= 1
+                    if letters_answer[key] == 0:
+                        if key in guess_listed:
+                            index_element = guess_listed.index(key)
+                            guess_listed[index_element] = '0'
         else:
             incorrect_letters[key] = incorrect_letters.get(key, 0) + 1
     for key in incorrect_letters:
-        if key in lst_guess:
-            for element in lst_guess:
+        if key in guess_listed:
+            for element in guess_listed:
                 if element == key:
-                    index_element = lst_guess.index(key)
-                    lst_guess[index_element] = '0'
-    return lst_guess, guess, incorrect_letters
+                    index_element = guess_listed.index(key)
+                    guess_listed[index_element] = '0'
+    return guess_listed, guess, incorrect_letters
                         
 def colour_guess():
-    num_prediction, estimate, wrong_letters = score_guess()
-    lst_estimate = list(estimate)
+    listed_guess, estimate, wrong_letters = score_guess()
+    estimate_listed = list(estimate)
     from termcolor import colored
-    for index_num in range(len(num_prediction)):
-        if num_prediction[index_num] == '1':
-            lst_estimate[index_num] = colored(estimate[index_num], 'green')
-        if num_prediction[index_num] == '2':
-           lst_estimate[index_num] = colored(estimate[index_num], 'yellow')
-        if num_prediction[index_num] == '0':
-             lst_estimate[index_num] = colored(estimate[index_num], 'red')
-    lst_wrong_letters = list(wrong_letters.keys())
-    lst_wrong_letters.sort()
-    for index_letter in range(len(lst_wrong_letters)):
-        lst_wrong_letters[index_letter] = colored(lst_wrong_letters[index_letter], 'red')
-    return "".join(lst_estimate), "".join(lst_wrong_letters)
+    for index_number in range(len(listed_guess)):
+        if listed_guess[index_number] == '1':
+            estimate_listed[index_number] = colored(estimate[index_number], 'green')
+        if listed_guess[index_number] == '2':
+           estimate_listed[index_number] = colored(estimate[index_number], 'yellow')
+        if listed_guess[index_number] == '0':
+            estimate_listed[index_number] = colored(estimate[index_number], 'red')
+    wrong_letters_listed = list(wrong_letters.keys())
+    wrong_letters_listed.sort()
+    for index_letter in range(len(wrong_letters_listed)):
+        wrong_letters_listed[index_letter] = colored(wrong_letters_listed[index_letter], 'red')
+    return "".join(estimate_listed), "".join(wrong_letters_listed)
 
 def gameplay():
     attempt_number = 0
@@ -111,7 +110,7 @@ def gameplay():
             if answer in guesses:
                 prompt = input('Winner! Enter Y here to play again, N if not ')
                 if prompt == 'Y':
-                    answer = random_word()
+                    answer = get_random_word()
                     attempt_number = 0
                 else:
                     print('The game has finished')
@@ -125,7 +124,7 @@ def gameplay():
             print('Answer was ' + answer)
             prompt = input('No more available attempts! Enter Y here to play again, N if not ')
             if prompt == 'Y':
-                answer = random_word()
+                answer = get_random_word()
                 attempt_number = 1
             else:
                 print('The game has finished')
