@@ -125,7 +125,7 @@ def gameplay():
             prompt = input('No more available attempts! Enter Y here to play again, N if not ')
             if prompt == 'Y':
                 answer = get_random_word()
-                attempt_number = 1
+                attempt_number = 0
             else:
                 print('The game has finished')
                 break
