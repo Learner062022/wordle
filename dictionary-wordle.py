@@ -4,7 +4,7 @@ def get_random_word():
     open_target_words = open('target_words.txt')
     for word in open_target_words:
         word = word.strip()
-        target_words[word] = word
+        all_words[word] = all_words.get(word, 0) + 1
     open_target_words.close()
     target_words_keys = list(target_words.keys())
     target_word = random.choice(target_words_keys)
