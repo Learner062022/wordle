@@ -17,7 +17,7 @@ def get_all_words():
     open_all_words = open('all_words.txt')
     for word in open_all_words:
         word = word.strip()
-        all_words[word] = word
+        all_words[word] = all_words.get(word, 0) + 1
     open_all_words.close()
     return all_words
 
