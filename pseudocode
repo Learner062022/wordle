@@ -1,1 +1,12 @@
+create empty dictionary target_words
+open file target_words.txt
+    for each word in the file:
+        strip the word of leading and trailing whitespaces
+        if the word is not in target_words, add it as a key with value 1
+        if the word is already in target_words, increment its value by 1
+close file target_words.txt
+create a list of keys from target_words called target_words_keys
+choose a random word from target_words_keys and assign it to target_word
+return target_word
 
+Assign the result of calling the function 'get_random_word' to the variable 'answer'
