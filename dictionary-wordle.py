@@ -1,7 +1,7 @@
 def get_random_word():
     target_words = dict()
     import random
-    open_target_words = open("target_words.txt")
+    open_target_words = open('target_words.txt')
     for word in open_target_words:
         word = word.strip()
         target_words[word] = word
