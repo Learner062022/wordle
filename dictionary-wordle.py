@@ -88,21 +88,21 @@ def score_guess():
     return guess_listed, guess, incorrect_letters
                         
 def colour_guess():
-    listed_guess, estimate, wrong_letters = score_guess()
-    estimate_listed = list(estimate)
+    numeric_guess, guess, wrong_letters = score_guess()
+    guess_listed = list(guess)
     from termcolor import colored
-    for index_number in range(len(listed_guess)):
-        if listed_guess[index_number] == '1':
-            estimate_listed[index_number] = colored(estimate[index_number], 'green')
-        if listed_guess[index_number] == '2':
-           estimate_listed[index_number] = colored(estimate[index_number], 'yellow')
-        if listed_guess[index_number] == '0':
-            estimate_listed[index_number] = colored(estimate[index_number], 'red')
+    for index_number in range(len(numeric_guess)):
+        if numeric_guess[index_number] == '1':
+            guess_listed[index_number] = colored(guess[index_number], 'green')
+        if numeric_guess[index_number] == '2':
+           guess_listed[index_number] = colored(guess[index_number], 'yellow')
+        if numeric_guess[index_number] == '0':
+            guess_listed[index_number] = colored(guess[index_number], 'red')
     wrong_letters_listed = list(wrong_letters.keys())
     wrong_letters_listed.sort()
     for index_letter in range(len(wrong_letters_listed)):
         wrong_letters_listed[index_letter] = colored(wrong_letters_listed[index_letter], 'red')
-    return ''.join(estimate_listed), ''.join(wrong_letters_listed)
+    return ''.join(guess_listed), ''.join(wrong_letters_listed)
 
 def gameplay():
     games_instructions()
