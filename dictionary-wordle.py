@@ -99,7 +99,7 @@ def colour_guess():
     wrong_letters_listed.sort()
     for index_letter in range(len(wrong_letters_listed)):
         wrong_letters_listed[index_letter] = colored(wrong_letters_listed[index_letter], 'red')
-    return "".join(estimate_listed), "".join(wrong_letters_listed)
+    return ''.join(estimate_listed), ''.join(wrong_letters_listed)
 
 def gameplay():
     attempt_number = 0
