@@ -1,3 +1,6 @@
+def games_instructions():
+    print('A 5 lettered word has been chosen from the English dictionary. You have 6 attempts to guess it. The letters within the guess will be coloured red, green or yellow to indicate if it's in the answer and its position if it is in the answer. Red letters aren't in the answer but green and yellow letters are. Yellow means that the letter's position in the guess isn't equivalent to the letter's position in the answer.)
+
 def get_random_word():
     target_words = dict()
     import random
@@ -102,6 +105,7 @@ def colour_guess():
     return ''.join(estimate_listed), ''.join(wrong_letters_listed)
 
 def gameplay():
+    games_instructions()
     attempt_number = 0
     global answer
     while True:
