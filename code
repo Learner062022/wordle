@@ -1,0 +1,154 @@
+from termcolor import colored
+import string
+
+
+def instructions():
+    print("A 5 lettered word has been chosen from the English dictionary. You have 6 attempts to guess it. "
+          "The letters within the guess will be coloured red, green or yellow. "
+          "These indicate if it's in the answer and its position within the answer. "
+          "Red letters aren't in the answer but green and yellow letters are. "
+          "Yellow letter's position aren't equivalent to theirs in the answer whereas green letters are.")
+
+
+def get_random_word():
+    target_words = dict()
+    import random
+    open_target_words = open('target_words.txt')
+    for word in open_target_words:
+        word = word.strip()
+        target_words[word] = 0
+    open_target_words.close()
+    target_words_keys = list(target_words.keys())
+    target_word = random.choice(target_words_keys)
+    return target_word
+
+
+answer = get_random_word()
+
+
+def get_all_words():
+    all_words = []
+    open_all_words = open('all_words.txt')
+    for word in open_all_words:
+        word = word.strip()
+        all_words.append(word)
+    open_all_words.close()
+    return all_words
+
+
+guesses = []
+file = open('secret.txt', 'w')
+
+
+def validate_guess():
+    all_words = get_all_words()
+    while True:
+        prompt = input("Enter a 5 lettered word ")
+        if prompt != '':
+            if len(prompt) != 5:
+                print('5 letters')
+            else:
+                if not prompt.isalpha():
+                    print('Alphabetical characters')
+                else:
+                    if prompt.islower():
+                        if prompt in all_words:
+                            guesses.append(prompt)
+                            return prompt
+                        else:
+                            ('Non existing')
+                    else:
+                        if prompt.lower() in all_words:
+                            guesses.append(prompt.lower())
+                            return prompt
+                        else:
+                           ('Non existing')
+        else:
+            print('Enter word')
+
+
+def score_guess():
+    global answer
+    letters_count_answer = dict()
+    for letter in answer:
+        letters_count_answer[letter] = letters_count_answer.get(letter, 0) + 1
+    guess = validate_guess()
+    usable_letters = list(string.ascii_lowercase)
+    listed_guess = []
+    if guess.islower():
+        listed_guess = list(guess)
+    else:
+        listed_guess = list(guess.lower())
+    for index in range(len(listed_guess)):
+        if listed_guess[index].islower():
+            letter = listed_guess[index]
+        else:
+            letter = listed_guess[index].lower()
+        if listed_guess[index] in answer:
+            if letters_count_answer[letter] != 0:
+                if listed_guess[index] == answer[index]:
+                    listed_guess[index] = '1'
+                    letters_count_answer[letter] -= 1
+                else:
+                    listed_guess[index] = '2'
+                    letters_count_answer[letter] -= 1
+            else:
+                listed_guess[index] = '0'
+        else:
+            listed_guess[index] = '0'
+            if letter in usable_letters:
+                usable_letters.remove(letter)
+    return listed_guess, usable_letters, guess
+
+
+def colour_guess():
+    numeric_guess, letters, guess = score_guess()
+    guess_listed = list(guess)
+    for index_number in range(len(numeric_guess)):
+        if numeric_guess[index_number] == '1':
+            guess_listed[index_number] = colored(guess[index_number], 'green')
+        if numeric_guess[index_number] == '2':
+            guess_listed[index_number] = colored(guess[index_number], 'yellow')
+        if numeric_guess[index_number] == '0':
+            guess_listed[index_number] = colored(guess[index_number], 'red')
+    return ''.join(guess_listed), ' '.join(letters)
+
+
+def gameplay():
+    instructions()
+    attempts = 0
+    global answer
+    while True:
+        if attempts < 6:
+            attempts += 1
+            if answer in guesses:
+                file.write(str(attempts) + '\n')
+                file.write(answer)
+                file.close()
+                print('Average number of attempts ' + str(attempts/6 * 100))
+                prompt = input('Winner! Enter Y here to play again, N if not ')
+                if prompt == 'Y':
+                    answer = get_random_word()
+                    attempts = 0
+                else:
+                    print('The game has finished')
+                    break
+            else:
+                print('Attempt number ' + str(attempts) + ':')
+                prediction, wrong_letters = colour_guess()
+                print(prediction)
+                print(wrong_letters)
+        else:
+            file.write(str(attempts) + '\n')
+            file.write(answer)
+            file.close()
+            print('Average number of attempts ' + str(attempts/6 * 100))
+            print('Answer was ' + answer)
+            prompt = input('No more available attempts! Enter Y here to play again, N if not ')
+            if prompt == 'Y':
+                answer = get_random_word()
+                attempts = 0
+            else:
+                break
+
+gameplay()
