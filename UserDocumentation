@@ -10,4 +10,4 @@ Entering Y restarts the game and N exits it. The attempt number, which is displa
 Guesses are displayed beneath the prompt and beneath each prompt are the letters that can constitute a guess. 
 Guesses beneath the prompt will have green, yellow or red letters to indicate their accuracy.
 Red letters are not in the answer, whereas green and yellow letters are. Green means that the letters' positions, or position, within 
-the guess and answer are identical. Yellow is the opposite of green.
+the guess and the answer are identical. Yellow is the opposite of green.
