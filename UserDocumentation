@@ -9,5 +9,5 @@ Users will be prompted asking if they want to exit the game or play again when a
 Entering Y restarts the game and N exits it. The attempt number, which is displayed above the prompt, is incremented after the guess has been accepted. 
 Guesses are displayed beneath the prompt and beneath each prompt are the letters that can constitute a guess. 
 Guesses beneath the prompt will have green, yellow or red letters to indicate their accuracy.
-Red letters are not in the answer, whereas green and yellow letters are. Green means that the guesses letters' positions, or position, within 
+Red letters are not in the answer, whereas green and yellow letters are. Green means that the letters' positions, or position, within 
 the guess and answer are identical. Yellow is the opposite of green.
